@@ -1,0 +1,4 @@
+calaveracustomer:
+    resource: "@calaveracustomerBundle/Resources/config/routing.yml"
+    prefix:   /
+

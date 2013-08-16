@@ -1,0 +1,7 @@
+parameters:
+#    calaveracustomer.example.class: calavera\customerBundle\Example
+
+services:
+#    calaveracustomer.example:
+#        class: %calaveracustomer.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
