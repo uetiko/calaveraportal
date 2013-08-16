@@ -1,0 +1,78 @@
+<?php
+
+namespace calavera\customerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AclObjectIdentities
+ *
+ * @ORM\Table(name="acl_object_identities")
+ * @ORM\Entity
+ */
+class AclObjectIdentities
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="class_id", type="integer", nullable=false)
+     */
+    private $classId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="object_identifier", type="string", length=100, nullable=false)
+     */
+    private $objectIdentifier;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="entries_inheriting", type="boolean", nullable=false)
+     */
+    private $entriesInheriting;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AclObjectIdentities", inversedBy="objectentity")
+     * @ORM\JoinTable(name="acl_object_identity_ancestors",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="object_identity_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="ancestor_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $ancestor;
+
+    /**
+     * @var \AclObjectIdentities
+     *
+     * @ORM\ManyToOne(targetEntity="AclObjectIdentities")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="parent_object_identity_id", referencedColumnName="id")
+     * })
+     */
+    private $parentObjectentity;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->ancestor = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+}

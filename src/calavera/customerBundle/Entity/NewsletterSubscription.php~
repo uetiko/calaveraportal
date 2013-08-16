@@ -1,0 +1,66 @@
+<?php
+
+namespace calavera\customerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * NewsletterSubscription
+ *
+ * @ORM\Table(name="newsletter_subscription")
+ * @ORM\Entity
+ */
+class NewsletterSubscription
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_newsletter_subscription", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idNewsletterSubscription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gener", type="string", length=6, nullable=true)
+     */
+    private $gener;
+
+    /**
+     * @var \Usuario
+     *
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_usuario")
+     * })
+     */
+    private $idUser;
+
+    /**
+     * @var \CatNewsletterStatus
+     *
+     * @ORM\ManyToOne(targetEntity="CatNewsletterStatus")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_newsletter_status", referencedColumnName="id_newsletter_status")
+     * })
+     */
+    private $idNewsletterStatus;
+
+
+}

@@ -4,33 +4,28 @@ namespace Acme\DemoBundle\Twig\Extension;
 
 use CG\Core\ClassUtils;
 
-class DemoExtension extends \Twig_Extension
-{
+class DemoExtension extends \Twig_Extension {
     protected $loader;
     protected $controller;
 
-    public function __construct(\Twig_LoaderInterface $loader)
-    {
+    public function __construct(\Twig_LoaderInterface $loader) {
         $this->loader = $loader;
     }
 
-    public function setController($controller)
-    {
+    public function setController($controller) {
         $this->controller = $controller;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getFunctions()
-    {
+    public function getFunctions() {
         return array(
             'code' => new \Twig_Function_Method($this, 'getCode', array('is_safe' => array('html'))),
         );
     }
 
-    public function getCode($template)
-    {
+    public function getCode($template) {
         // highlight_string highlights php code only if '<?php' tag is present.
         $controller = highlight_string("<?php" . $this->getControllerCode(), true);
         $controller = str_replace('<span style="color: #0000BB">&lt;?php&nbsp;&nbsp;&nbsp;&nbsp;</span>', '&nbsp;&nbsp;&nbsp;&nbsp;', $controller);
@@ -49,8 +44,7 @@ class DemoExtension extends \Twig_Extension
 EOF;
     }
 
-    protected function getControllerCode()
-    {
+    protected function getControllerCode() {
         $class = get_class($this->controller[0]);
         if (class_exists('CG\Core\ClassUtils')) {
             $class = ClassUtils::getUserClass($class);
@@ -61,11 +55,10 @@ EOF;
 
         $code = file($r->getFilename());
 
-        return '    '.$m->getDocComment()."\n".implode('', array_slice($code, $m->getStartline() - 1, $m->getEndLine() - $m->getStartline() + 1));
+        return '    ' . $m->getDocComment() . "\n" . implode('', array_slice($code, $m->getStartline() - 1, $m->getEndLine() - $m->getStartline() + 1));
     }
 
-    protected function getTemplateCode($template)
-    {
+    protected function getTemplateCode($template) {
         return $this->loader->getSource($template->getTemplateName());
     }
 
@@ -74,8 +67,8 @@ EOF;
      *
      * @return string The extension name
      */
-    public function getName()
-    {
+    public function getName() {
         return 'demo';
     }
+
 }
