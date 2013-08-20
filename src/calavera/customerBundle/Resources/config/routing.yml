@@ -1,3 +1,7 @@
 calaveracustomer_homepage:
-    pattern:  /hello/{name}
+    pattern:  /
     defaults: { _controller: calaveracustomerBundle:Default:index }
+
+calaveracustomer_homepage:
+    pattern:  /newsletter
+    defaults: { _controller: calaveracustomerBundle:Newsletter:index }
