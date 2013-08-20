@@ -22,16 +22,8 @@ class NewsletterController extends Controller {
     }
 
     public function testAction() {
-        $em = $this->getDoctrine()->getEntityManager();
-        $result = new \calavera\customerBundle\Entity\CatNewsletterStatus();
-        
-        $dql = "select u from \calavera\customerBundle\Entity\CatNewsletterStatus u";
-        try{
-            $query = $em->createQuery($dql);
-            $result = $query->getResult();
-        }catch ( \Exception $e){
-            
-        }
+        $bo = new \calavera\customerBundle\BO\NewsletterBO($this->getDoctrine()->getEntityManager());
+        $result = $bo->getStatusForNewsletter();
         $a = array(
             "datoUno" => $result[0]->getStatus(),
             "datoDos" => $result[1]->getStatus()

@@ -12,4 +12,8 @@ class NewsletterBO {
         $this->nldao = new \calavera\customerBundle\DAO\NewsletterDAO($em);
     }
     
+    public function getStatusForNewsletter(){
+        return $this->nldao->getCatStatusNewsletter();
+    }
+    
 }

@@ -26,12 +26,22 @@ class NewsletterDAO {
      * @param \calavera\customerBundle\DTO\CustomerDTO $customer
      */
     public function registerNewsletter(\calavera\customerBundle\DTO\CustomerDTO $customer){
-        $em = new \Doctrine\ORM\EntityManager();
         $subscription = new NewsletterSubscription();
         $gender = new CatGender();
         $status = new CatNewsletterStatus();
         
         
-        
+    }
+    
+    public function getCatStatusNewsletter(){
+        $status = new \calavera\customerBundle\Entity\CatNewsletterStatus();
+        $dql = "select u from \calavera\customerBundle\Entity\CatNewsletterStatus u";
+        try{
+            $query = $this->em->createQuery($dql);
+            $status = $query->getResult();
+        }  catch (\Exception $e){
+            
+        }
+        return $status;
     }
 }
