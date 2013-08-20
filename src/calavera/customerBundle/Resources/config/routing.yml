@@ -5,3 +5,8 @@ calaveracustomer_homepage:
 calaveracustomer_homepage:
     pattern:  /newsletter
     defaults: { _controller: calaveracustomerBundle:Newsletter:index }
+
+calaveracustomer_homepage:
+    pattern:  /newsletter/test
+    defaults: { _controller: calaveracustomerBundle:Newsletter:test }
+  
