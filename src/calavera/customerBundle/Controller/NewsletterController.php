@@ -25,8 +25,8 @@ class NewsletterController extends Controller {
         $bo = new \calavera\customerBundle\BO\NewsletterBO($this->getDoctrine()->getEntityManager());
         $result = $bo->getStatusForNewsletter();
         $a = array(
-            "datoUno" => $result[0]->getStatus(),
-            "datoDos" => $result[1]->getStatus()
+            "datoUno" => $result->getStatus(),
+            "datoDos" => ''//$result[1]->getStatus()
         );
         
         $response = new Response(json_encode($a));

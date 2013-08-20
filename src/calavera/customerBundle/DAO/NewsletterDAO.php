@@ -29,19 +29,49 @@ class NewsletterDAO {
         $subscription = new NewsletterSubscription();
         $gender = new CatGender();
         $status = new CatNewsletterStatus();
-        
-        
+        $gender->setGender($customer->getGender());
+        $dql = "select s from \calavera\customerBundle\Entity\CatNewsletterStatus s where s.status = 'subscribed'";
+        try {
+            $query = $this->em->createQuery($dql);
+            $status = $query->getOneOrNullResult();
+        } catch (\Doctrine\ORM\ORMException $orme) {
+            echo $orme->getTraceAsString();
+        } catch (\Doctrine\ORM\NoResultException $nre){
+            
+        }  catch (\Doctrine\ORM\ORMInvalidArgumentException $ormiae){
+            
+        }
+        $subscription->setIdNewsletterStatus($status);
+        $subscription->setEmail($customer->getEmail());
+        $subscription->getGener();
+        $dql = "";
+        try {
+            $this->em->persist($subscription);
+            $this->em->flush();
+        } catch (\Doctrine\ORM\ORMException $orme) {
+            echo $orme->getTraceAsString();
+        } catch (\Doctrine\ORM\NoResultException $nre){
+            
+        }  catch (\Doctrine\ORM\ORMInvalidArgumentException $ormiae){
+            
+        }
     }
     
     public function getCatStatusNewsletter(){
         $status = new \calavera\customerBundle\Entity\CatNewsletterStatus();
-        $dql = "select u from \calavera\customerBundle\Entity\CatNewsletterStatus u";
+        $dql = "select u from \calavera\customerBundle\Entity\CatNewsletterStatus u where u.status = 'subscribed'";
         try{
             $query = $this->em->createQuery($dql);
-            $status = $query->getResult();
-        }  catch (\Exception $e){
+            $status = $query->getOneOrNullResult();
+        }catch(\Doctrine\ORM\NoResultException $orme){
+            
+        } catch (\Exception $e){
             
         }
         return $status;
     }
+    public function registerMailInNewsletter(){
+        
+    }
+    
 }
