@@ -1,0 +1,15 @@
+/* 
+    Document   : home
+    Created on : Aug 26, 2013, 5:41:10 PM
+    Author     : silent
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.swiper-slide.swiper-slide-visible {
+height: 528px !important;
+}
+
+.color-home-slider{
+    color: white;
+}
