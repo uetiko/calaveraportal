@@ -4,6 +4,7 @@ namespace calavera\customerBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
@@ -13,8 +14,18 @@ class NewsletterController extends Controller {
         return $this->render('calaveracustomerBundle:Newsletter:index.html.twig');
     }
 
-    public function signAction() {
+    public function signAction(Request $request) {
+        $newsletter = new \calavera\customerBundle\DTO\NewsletterDTO();
         $bo = new \calavera\customerBundle\BO\NewsletterBO($this->getDoctrine()->getEntityManager());
+        $request = $this->get('request');
+        
+        $nl = $request->request->all();
+        $newsletter->setEmail($nl['email']);
+        $newsletter->setGender($nl['gender']);
+        
+        $response = new Response(json_encode($bo->registerMailInNewsletter($newsletter)));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
     }
 
     public function unsignAction() {

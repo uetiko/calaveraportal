@@ -1,7 +1,11 @@
 {% extends 'calaveracustomerBundle::base.html.twig'%}
+{% block title %}Newsletter{% endblock %}
 {% block body %}
-<form id="register" action="/newsletter/sign">
-    <div id="ff-suscription-sex">
+<form id="register" action="{{ path('_newsletterSing') }}" method="POST">
+    <div id="messaje-register">
+        Registrate en nuestro newsletter
+    </div>
+    <div id="suscription-sex">
         <span class="op">
             <input id="suscription-sex-h" name="gender" type="radio" value="male">
             <label for="suscription-sex-h">Hombre</label>
@@ -11,14 +15,12 @@
             <label for="suscription-sex-m">Mujer</label>
         </span>
     </div>
-    <div id="ff-suscription-email">
+    <div id="suscription-email">
         <input id="suscription-email" name="email" placeholder="Escribe tu correo" type="email">
     </div>
-    <div id="ff-suscription-submit">
+    <div id="suscription-submit">
         <button id="suscription-submit" type="submit">¡Suscríbete!</button>
-        <input id="suscription_token" name="YII_CSRF_TOKEN" type="hidden" value="badae69a2183835847c4c6a00ebbe964bd792611">
     </div>
 </form>
 
-Hola newsletter
 {% endblock %}

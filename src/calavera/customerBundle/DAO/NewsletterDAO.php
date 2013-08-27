@@ -25,11 +25,11 @@ class NewsletterDAO {
      * 
      * @param \calavera\customerBundle\DTO\CustomerDTO $customer
      */
-    public function registerNewsletter(\calavera\customerBundle\DTO\CustomerDTO $customer){
+    public function registerNewsletter(\calavera\customerBundle\DTO\NewsletterDTO $newsletter){
         $subscription = new NewsletterSubscription();
         $gender = new CatGender();
         $status = new CatNewsletterStatus();
-        $gender->setGender($customer->getGender());
+        $gender->setGender($newsletter->getGender());
         $dql = "select s from \calavera\customerBundle\Entity\CatNewsletterStatus s where s.status = 'subscribed'";
         try {
             $query = $this->em->createQuery($dql);
@@ -42,19 +42,24 @@ class NewsletterDAO {
             
         }
         $subscription->setIdNewsletterStatus($status);
-        $subscription->setEmail($customer->getEmail());
+        $subscription->setEmail($newsletter->getEmail());
         $subscription->getGener();
         $dql = "";
         try {
             $this->em->persist($subscription);
             $this->em->flush();
+            $status = "Ha sido registrado en nuestro newsletter";
         } catch (\Doctrine\ORM\ORMException $orme) {
             echo $orme->getTraceAsString();
+            $status = "No pudo ser registrado en nuestro newsletter.";
         } catch (\Doctrine\ORM\NoResultException $nre){
-            
+            $status = "No pudo ser registrado en nuestro newsletter.";
         }  catch (\Doctrine\ORM\ORMInvalidArgumentException $ormiae){
-            
+            $status = "No pudo ser registrado en nuestro newsletter.";
+        } catch (\Exception $e){
+            $status = "No pudo ser registrado en nuestro newsletter.";
         }
+        return $status;
     }
     
     public function getCatStatusNewsletter(){
