@@ -4,10 +4,47 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <script src="{{ asset('bundles/calaveracustomer/js/jquery-1.10.2.js') }}"></script>
+        <script src="{{ asset('bundles/calaveracustomer/js/idangerous.swiper.js') }}"></script>
+        
+        <link rel="stylesheet" href="{{ asset('bundles/calaveracustomer/css/menu.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/calaveracustomer/css/idangerous.swiper.css') }}" type="text/css" />
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+        <header id="calavera-header">
+            <nav id="calavera-nav-header">
+                <a href="{{ url('home') }}/"><menu>Home</menu></a>
+                <a href="{{ url('_soluciones') }}"><menu>Solutions</menu></a>
+                <a href="{{ url('_contacto') }}"><menu>contacto</menu></a>
+                <a href="{{ url('_blog') }}"><menu>blog</menu></a>
+                <menu>Clinte</menu>
+            </nav>
+        </header>
+        <section>
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+        </section>
+        <footer>
+            <!-- Piwik -->
+            <script type="text/javascript">
+              var _paq = _paq || [];
+              _paq.push(["setCookieDomain", "*.symfony.loca"]);
+              _paq.push(["trackPageView"]);
+              _paq.push(["enableLinkTracking"]);
+
+              (function() {
+                var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.local/";
+                _paq.push(["setTrackerUrl", u+"piwik.php"]);
+                _paq.push(["setSiteId", "1"]);
+                var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+                g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+              })();
+            </script>
+            <!-- End Piwik Code -->
+            <!-- Piwik Image Tracker -->
+            <img src="http://piwik.local/piwik.php?idsite=1&amp;rec=1" style="border:0" alt="" />
+            <!-- End Piwik -->
+        </footer>
+        </body>
+    </html>

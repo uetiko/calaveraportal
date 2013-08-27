@@ -1,12 +1,27 @@
-calaveracustomer_homepage:
+home:
     pattern:  /
-    defaults: { _controller: calaveracustomerBundle:Default:index }
+    defaults: { _controller: calaveracustomerBundle:Home:index }
 
-calaveracustomer_homepage:
+_newsletter:
     pattern:  /newsletter
     defaults: { _controller: calaveracustomerBundle:Newsletter:index }
 
-calaveracustomer_homepage:
+_calaveracustomer_homepage:
     pattern:  /newsletter/test
     defaults: { _controller: calaveracustomerBundle:Newsletter:test }
+    
+_newsletterSing:
+  pattern: /newsletter/sign
+  defaults: { _controller: calaveracustomerBundle:Newsletter:sign }
   
+_contacto:
+  pattern: /contacto
+  defaults: { _controller: calaveracustomerBundle:Contacto:index }
+  
+_soluciones:
+  pattern: /soluciones
+  defaults: { _controller: calaveracustomerBundle:Soluciones:index }
+  
+_blog : 
+  pattern: /blog
+  defaults : { _controller: calaveracustomerBundle:Blog:index }
