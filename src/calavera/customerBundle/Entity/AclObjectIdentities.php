@@ -197,4 +197,42 @@ class AclObjectIdentities {
         return $this->parentObjectentity;
     }
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $objectentity;
+
+
+    /**
+     * Add objectentity
+     *
+     * @param \calavera\customerBundle\Entity\AclObjectIdentities $objectentity
+     * @return AclObjectIdentities
+     */
+    public function addObjectentity(\calavera\customerBundle\Entity\AclObjectIdentities $objectentity)
+    {
+        $this->objectentity[] = $objectentity;
+    
+        return $this;
+    }
+
+    /**
+     * Remove objectentity
+     *
+     * @param \calavera\customerBundle\Entity\AclObjectIdentities $objectentity
+     */
+    public function removeObjectentity(\calavera\customerBundle\Entity\AclObjectIdentities $objectentity)
+    {
+        $this->objectentity->removeElement($objectentity);
+    }
+
+    /**
+     * Get objectentity
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getObjectentity()
+    {
+        return $this->objectentity;
+    }
 }
