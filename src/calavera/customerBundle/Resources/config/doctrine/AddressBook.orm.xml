@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\AddressBook" table="address_book">
+    <id name="idAddressBook" type="string" column="id_address_book" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="assignedUserId" type="string" column="assigned_user_id" length="36" nullable="false"/>
+    <field name="bean" type="string" column="bean" length="50" nullable="true"/>
+    <field name="beanId" type="string" column="bean_id" length="36" nullable="false"/>
+  </entity>
+</doctrine-mapping>

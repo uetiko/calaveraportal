@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\CampaignLog" table="campaign_log">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="campaignId" type="string" column="campaign_id" length="36" nullable="true"/>
+    <field name="targetTrackerKey" type="string" column="target_tracker_key" length="36" nullable="true"/>
+    <field name="targetId" type="string" column="target_id" length="36" nullable="true"/>
+    <field name="targetType" type="string" column="target_type" length="100" nullable="true"/>
+    <field name="activityType" type="string" column="activity_type" length="100" nullable="true"/>
+    <field name="activityDate" type="datetime" column="activity_date" nullable="true"/>
+    <field name="relatedId" type="string" column="related_id" length="36" nullable="true"/>
+    <field name="relatedType" type="string" column="related_type" length="100" nullable="true"/>
+    <field name="archived" type="boolean" column="archived" nullable="true"/>
+    <field name="hits" type="integer" column="hits" nullable="true"/>
+    <field name="listId" type="string" column="list_id" length="36" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="moreInformation" type="string" column="more_information" length="100" nullable="true"/>
+    <field name="marketingId" type="string" column="marketing_id" length="36" nullable="true"/>
+  </entity>
+</doctrine-mapping>

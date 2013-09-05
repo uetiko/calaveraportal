@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\Emailman" table="emailman">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateEntered" type="datetime" column="date_entered" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="userId" type="string" column="user_id" length="36" nullable="true"/>
+    <field name="campaignId" type="string" column="campaign_id" length="36" nullable="true"/>
+    <field name="marketingId" type="string" column="marketing_id" length="36" nullable="true"/>
+    <field name="listId" type="string" column="list_id" length="36" nullable="true"/>
+    <field name="sendDateTime" type="datetime" column="send_date_time" nullable="true"/>
+    <field name="modifiedUserId" type="string" column="modified_user_id" length="36" nullable="true"/>
+    <field name="inQueue" type="boolean" column="in_queue" nullable="true"/>
+    <field name="inQueueDate" type="datetime" column="in_queue_date" nullable="true"/>
+    <field name="sendAttempts" type="integer" column="send_attempts" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+    <field name="relatedId" type="string" column="related_id" length="36" nullable="true"/>
+    <field name="relatedType" type="string" column="related_type" length="100" nullable="true"/>
+  </entity>
+</doctrine-mapping>

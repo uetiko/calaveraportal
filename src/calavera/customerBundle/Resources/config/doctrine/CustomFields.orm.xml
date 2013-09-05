@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\CustomFields" table="custom_fields">
+    <id name="idCustomFields" type="integer" column="id_custom_fields">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="beanId" type="string" column="bean_id" length="36" nullable="true"/>
+    <field name="setNum" type="integer" column="set_num" nullable="true"/>
+    <field name="field0" type="string" column="field0" length="255" nullable="true"/>
+    <field name="field1" type="string" column="field1" length="255" nullable="true"/>
+    <field name="field2" type="string" column="field2" length="255" nullable="true"/>
+    <field name="field3" type="string" column="field3" length="255" nullable="true"/>
+    <field name="field4" type="string" column="field4" length="255" nullable="true"/>
+    <field name="field5" type="string" column="field5" length="255" nullable="true"/>
+    <field name="field6" type="string" column="field6" length="255" nullable="true"/>
+    <field name="field7" type="string" column="field7" length="255" nullable="true"/>
+    <field name="field8" type="string" column="field8" length="255" nullable="true"/>
+    <field name="field9" type="string" column="field9" length="255" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\CronRemoveDocuments" table="cron_remove_documents">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="beanId" type="string" column="bean_id" length="36" nullable="true"/>
+    <field name="module" type="string" column="module" length="25" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\AccountsAudit" table="accounts_audit">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="parentId" type="string" column="parent_id" length="36" nullable="false"/>
+    <field name="dateCreated" type="datetime" column="date_created" nullable="true"/>
+    <field name="createdBy" type="string" column="created_by" length="36" nullable="true"/>
+    <field name="fieldName" type="string" column="field_name" length="100" nullable="true"/>
+    <field name="dataType" type="string" column="data_type" length="100" nullable="true"/>
+    <field name="beforeValueString" type="string" column="before_value_string" length="255" nullable="true"/>
+    <field name="afterValueString" type="string" column="after_value_string" length="255" nullable="true"/>
+    <field name="beforeValueText" type="text" column="before_value_text" nullable="true"/>
+    <field name="afterValueText" type="text" column="after_value_text" nullable="true"/>
+  </entity>
+</doctrine-mapping>

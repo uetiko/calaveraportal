@@ -1,0 +1,46 @@
+NewsletterSubscription:
+    type: entity
+    table: newsletter_subscription
+    fields:
+        idNewsletterSubscription:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: id_newsletter_subscription
+            generator:
+                strategy: IDENTITY
+        email:
+            type: string
+            length: 255
+            fixed: false
+            nullable: false
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        gener:
+            type: string
+            length: 6
+            fixed: false
+            nullable: true
+    manyToOne:
+        idNewsletterStatus:
+            targetEntity: CatNewsletterStatus
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_newsletter_status:
+                    referencedColumnName: id_newsletter_status
+            orphanRemoval: false
+        idUser:
+            targetEntity: Usuario
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_user:
+                    referencedColumnName: id_usuario
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
