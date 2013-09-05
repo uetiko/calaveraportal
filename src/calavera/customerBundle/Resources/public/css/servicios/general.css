@@ -1,0 +1,32 @@
+/* 
+    Document   : general
+    Created on : Aug 31, 2013, 2:44:29 AM
+    Author     : silent
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.logo-calavera {
+    background-image: url('/bundles/calaveracustomer/images/icons/logos/calavera_logo.jpg');
+    width: 126px;
+    height: 149px;
+}
+
+.service-describe {
+    width: 400px;
+}
+
+.title-service {
+    font-size: 32px;
+    border-bottom: 1px solid #CCC;
+    font-family: 'Bitter', serif;
+    font-weight: 800;
+    float: left;;
+}
+
+.service-element {
+    margin: 5px;
+    padding: 13px;
+    width: 320px;
+    float: left;
+}

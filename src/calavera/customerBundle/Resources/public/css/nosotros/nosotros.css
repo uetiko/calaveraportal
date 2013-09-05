@@ -1,0 +1,22 @@
+/* 
+    Document   : nosotros
+    Created on : Aug 30, 2013, 2:07:51 PM
+    Author     : Angel Barrientos
+    Description:
+        Purpose of the stylesheet follows.
+*/
+#nosotros-header {
+    width: 850px;
+    height: 350px;
+    float: left;
+    position: absolute;
+    background-image:url('/bundles/calaveracustomer/images/header/header.png');
+}
+
+#nosotros-content {
+    width: 507px;
+    float: left;
+    position: relative;
+    padding-top: 50px;
+    padding-left: 50px;
+}
