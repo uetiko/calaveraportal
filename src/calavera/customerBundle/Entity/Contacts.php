@@ -5,10 +5,10 @@ namespace calavera\customerBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Contacts
+ * Contacts is a table of sugarCRM
  */
-class Contacts
-{
+class Contacts {
+
     /**
      * @var \DateTime
      */
@@ -184,17 +184,15 @@ class Contacts
      */
     private $id;
 
-
     /**
      * Set dateEntered
      *
      * @param \DateTime $dateEntered
      * @return Contacts
      */
-    public function setDateEntered($dateEntered)
-    {
+    public function setDateEntered($dateEntered) {
         $this->dateEntered = $dateEntered;
-    
+
         return $this;
     }
 
@@ -203,8 +201,7 @@ class Contacts
      *
      * @return \DateTime 
      */
-    public function getDateEntered()
-    {
+    public function getDateEntered() {
         return $this->dateEntered;
     }
 
@@ -214,11 +211,14 @@ class Contacts
      * @param \DateTime $dateModified
      * @return Contacts
      */
-    public function setDateModified($dateModified)
-    {
+    public function setDateModified($dateModified) {
         $this->dateModified = $dateModified;
-    
+
         return $this;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
     }
 
     /**
@@ -226,8 +226,7 @@ class Contacts
      *
      * @return \DateTime 
      */
-    public function getDateModified()
-    {
+    public function getDateModified() {
         return $this->dateModified;
     }
 
@@ -237,10 +236,9 @@ class Contacts
      * @param string $modifiedUserId
      * @return Contacts
      */
-    public function setModifiedUserId($modifiedUserId)
-    {
+    public function setModifiedUserId($modifiedUserId) {
         $this->modifiedUserId = $modifiedUserId;
-    
+
         return $this;
     }
 
@@ -249,8 +247,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getModifiedUserId()
-    {
+    public function getModifiedUserId() {
         return $this->modifiedUserId;
     }
 
@@ -260,10 +257,9 @@ class Contacts
      * @param string $createdBy
      * @return Contacts
      */
-    public function setCreatedBy($createdBy)
-    {
+    public function setCreatedBy($createdBy) {
         $this->createdBy = $createdBy;
-    
+
         return $this;
     }
 
@@ -272,8 +268,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getCreatedBy()
-    {
+    public function getCreatedBy() {
         return $this->createdBy;
     }
 
@@ -283,10 +278,9 @@ class Contacts
      * @param string $description
      * @return Contacts
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
-    
+
         return $this;
     }
 
@@ -295,8 +289,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -306,10 +299,9 @@ class Contacts
      * @param boolean $deleted
      * @return Contacts
      */
-    public function setDeleted($deleted)
-    {
+    public function setDeleted($deleted) {
         $this->deleted = $deleted;
-    
+
         return $this;
     }
 
@@ -318,8 +310,7 @@ class Contacts
      *
      * @return boolean 
      */
-    public function getDeleted()
-    {
+    public function getDeleted() {
         return $this->deleted;
     }
 
@@ -329,10 +320,9 @@ class Contacts
      * @param string $assignedUserId
      * @return Contacts
      */
-    public function setAssignedUserId($assignedUserId)
-    {
+    public function setAssignedUserId($assignedUserId) {
         $this->assignedUserId = $assignedUserId;
-    
+
         return $this;
     }
 
@@ -341,8 +331,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getAssignedUserId()
-    {
+    public function getAssignedUserId() {
         return $this->assignedUserId;
     }
 
@@ -352,10 +341,9 @@ class Contacts
      * @param string $salutation
      * @return Contacts
      */
-    public function setSalutation($salutation)
-    {
+    public function setSalutation($salutation) {
         $this->salutation = $salutation;
-    
+
         return $this;
     }
 
@@ -364,8 +352,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getSalutation()
-    {
+    public function getSalutation() {
         return $this->salutation;
     }
 
@@ -375,10 +362,9 @@ class Contacts
      * @param string $firstName
      * @return Contacts
      */
-    public function setFirstName($firstName)
-    {
+    public function setFirstName($firstName) {
         $this->firstName = $firstName;
-    
+
         return $this;
     }
 
@@ -387,8 +373,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getFirstName()
-    {
+    public function getFirstName() {
         return $this->firstName;
     }
 
@@ -398,10 +383,9 @@ class Contacts
      * @param string $lastName
      * @return Contacts
      */
-    public function setLastName($lastName)
-    {
+    public function setLastName($lastName) {
         $this->lastName = $lastName;
-    
+
         return $this;
     }
 
@@ -410,8 +394,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getLastName()
-    {
+    public function getLastName() {
         return $this->lastName;
     }
 
@@ -421,10 +404,9 @@ class Contacts
      * @param string $title
      * @return Contacts
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
-    
+
         return $this;
     }
 
@@ -433,8 +415,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -444,10 +425,9 @@ class Contacts
      * @param string $department
      * @return Contacts
      */
-    public function setDepartment($department)
-    {
+    public function setDepartment($department) {
         $this->department = $department;
-    
+
         return $this;
     }
 
@@ -456,8 +436,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getDepartment()
-    {
+    public function getDepartment() {
         return $this->department;
     }
 
@@ -467,10 +446,9 @@ class Contacts
      * @param boolean $doNotCall
      * @return Contacts
      */
-    public function setDoNotCall($doNotCall)
-    {
+    public function setDoNotCall($doNotCall) {
         $this->doNotCall = $doNotCall;
-    
+
         return $this;
     }
 
@@ -479,8 +457,7 @@ class Contacts
      *
      * @return boolean 
      */
-    public function getDoNotCall()
-    {
+    public function getDoNotCall() {
         return $this->doNotCall;
     }
 
@@ -490,10 +467,9 @@ class Contacts
      * @param string $phoneHome
      * @return Contacts
      */
-    public function setPhoneHome($phoneHome)
-    {
+    public function setPhoneHome($phoneHome) {
         $this->phoneHome = $phoneHome;
-    
+
         return $this;
     }
 
@@ -502,8 +478,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPhoneHome()
-    {
+    public function getPhoneHome() {
         return $this->phoneHome;
     }
 
@@ -513,10 +488,9 @@ class Contacts
      * @param string $phoneMobile
      * @return Contacts
      */
-    public function setPhoneMobile($phoneMobile)
-    {
+    public function setPhoneMobile($phoneMobile) {
         $this->phoneMobile = $phoneMobile;
-    
+
         return $this;
     }
 
@@ -525,8 +499,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPhoneMobile()
-    {
+    public function getPhoneMobile() {
         return $this->phoneMobile;
     }
 
@@ -536,10 +509,9 @@ class Contacts
      * @param string $phoneWork
      * @return Contacts
      */
-    public function setPhoneWork($phoneWork)
-    {
+    public function setPhoneWork($phoneWork) {
         $this->phoneWork = $phoneWork;
-    
+
         return $this;
     }
 
@@ -548,8 +520,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPhoneWork()
-    {
+    public function getPhoneWork() {
         return $this->phoneWork;
     }
 
@@ -559,10 +530,9 @@ class Contacts
      * @param string $phoneOther
      * @return Contacts
      */
-    public function setPhoneOther($phoneOther)
-    {
+    public function setPhoneOther($phoneOther) {
         $this->phoneOther = $phoneOther;
-    
+
         return $this;
     }
 
@@ -571,8 +541,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPhoneOther()
-    {
+    public function getPhoneOther() {
         return $this->phoneOther;
     }
 
@@ -582,10 +551,9 @@ class Contacts
      * @param string $phoneFax
      * @return Contacts
      */
-    public function setPhoneFax($phoneFax)
-    {
+    public function setPhoneFax($phoneFax) {
         $this->phoneFax = $phoneFax;
-    
+
         return $this;
     }
 
@@ -594,8 +562,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPhoneFax()
-    {
+    public function getPhoneFax() {
         return $this->phoneFax;
     }
 
@@ -605,10 +572,9 @@ class Contacts
      * @param string $primaryAddressStreet
      * @return Contacts
      */
-    public function setPrimaryAddressStreet($primaryAddressStreet)
-    {
+    public function setPrimaryAddressStreet($primaryAddressStreet) {
         $this->primaryAddressStreet = $primaryAddressStreet;
-    
+
         return $this;
     }
 
@@ -617,8 +583,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPrimaryAddressStreet()
-    {
+    public function getPrimaryAddressStreet() {
         return $this->primaryAddressStreet;
     }
 
@@ -628,10 +593,9 @@ class Contacts
      * @param string $primaryAddressCity
      * @return Contacts
      */
-    public function setPrimaryAddressCity($primaryAddressCity)
-    {
+    public function setPrimaryAddressCity($primaryAddressCity) {
         $this->primaryAddressCity = $primaryAddressCity;
-    
+
         return $this;
     }
 
@@ -640,8 +604,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPrimaryAddressCity()
-    {
+    public function getPrimaryAddressCity() {
         return $this->primaryAddressCity;
     }
 
@@ -651,10 +614,9 @@ class Contacts
      * @param string $primaryAddressState
      * @return Contacts
      */
-    public function setPrimaryAddressState($primaryAddressState)
-    {
+    public function setPrimaryAddressState($primaryAddressState) {
         $this->primaryAddressState = $primaryAddressState;
-    
+
         return $this;
     }
 
@@ -663,8 +625,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPrimaryAddressState()
-    {
+    public function getPrimaryAddressState() {
         return $this->primaryAddressState;
     }
 
@@ -674,10 +635,9 @@ class Contacts
      * @param string $primaryAddressPostalcode
      * @return Contacts
      */
-    public function setPrimaryAddressPostalcode($primaryAddressPostalcode)
-    {
+    public function setPrimaryAddressPostalcode($primaryAddressPostalcode) {
         $this->primaryAddressPostalcode = $primaryAddressPostalcode;
-    
+
         return $this;
     }
 
@@ -686,8 +646,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPrimaryAddressPostalcode()
-    {
+    public function getPrimaryAddressPostalcode() {
         return $this->primaryAddressPostalcode;
     }
 
@@ -697,10 +656,9 @@ class Contacts
      * @param string $primaryAddressCountry
      * @return Contacts
      */
-    public function setPrimaryAddressCountry($primaryAddressCountry)
-    {
+    public function setPrimaryAddressCountry($primaryAddressCountry) {
         $this->primaryAddressCountry = $primaryAddressCountry;
-    
+
         return $this;
     }
 
@@ -709,8 +667,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getPrimaryAddressCountry()
-    {
+    public function getPrimaryAddressCountry() {
         return $this->primaryAddressCountry;
     }
 
@@ -720,10 +677,9 @@ class Contacts
      * @param string $altAddressStreet
      * @return Contacts
      */
-    public function setAltAddressStreet($altAddressStreet)
-    {
+    public function setAltAddressStreet($altAddressStreet) {
         $this->altAddressStreet = $altAddressStreet;
-    
+
         return $this;
     }
 
@@ -732,8 +688,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getAltAddressStreet()
-    {
+    public function getAltAddressStreet() {
         return $this->altAddressStreet;
     }
 
@@ -743,10 +698,9 @@ class Contacts
      * @param string $altAddressCity
      * @return Contacts
      */
-    public function setAltAddressCity($altAddressCity)
-    {
+    public function setAltAddressCity($altAddressCity) {
         $this->altAddressCity = $altAddressCity;
-    
+
         return $this;
     }
 
@@ -755,8 +709,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getAltAddressCity()
-    {
+    public function getAltAddressCity() {
         return $this->altAddressCity;
     }
 
@@ -766,10 +719,9 @@ class Contacts
      * @param string $altAddressState
      * @return Contacts
      */
-    public function setAltAddressState($altAddressState)
-    {
+    public function setAltAddressState($altAddressState) {
         $this->altAddressState = $altAddressState;
-    
+
         return $this;
     }
 
@@ -778,8 +730,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getAltAddressState()
-    {
+    public function getAltAddressState() {
         return $this->altAddressState;
     }
 
@@ -789,10 +740,9 @@ class Contacts
      * @param string $altAddressPostalcode
      * @return Contacts
      */
-    public function setAltAddressPostalcode($altAddressPostalcode)
-    {
+    public function setAltAddressPostalcode($altAddressPostalcode) {
         $this->altAddressPostalcode = $altAddressPostalcode;
-    
+
         return $this;
     }
 
@@ -801,8 +751,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getAltAddressPostalcode()
-    {
+    public function getAltAddressPostalcode() {
         return $this->altAddressPostalcode;
     }
 
@@ -812,10 +761,9 @@ class Contacts
      * @param string $altAddressCountry
      * @return Contacts
      */
-    public function setAltAddressCountry($altAddressCountry)
-    {
+    public function setAltAddressCountry($altAddressCountry) {
         $this->altAddressCountry = $altAddressCountry;
-    
+
         return $this;
     }
 
@@ -824,8 +772,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getAltAddressCountry()
-    {
+    public function getAltAddressCountry() {
         return $this->altAddressCountry;
     }
 
@@ -835,10 +782,9 @@ class Contacts
      * @param string $assistant
      * @return Contacts
      */
-    public function setAssistant($assistant)
-    {
+    public function setAssistant($assistant) {
         $this->assistant = $assistant;
-    
+
         return $this;
     }
 
@@ -847,8 +793,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getAssistant()
-    {
+    public function getAssistant() {
         return $this->assistant;
     }
 
@@ -858,10 +803,9 @@ class Contacts
      * @param string $assistantPhone
      * @return Contacts
      */
-    public function setAssistantPhone($assistantPhone)
-    {
+    public function setAssistantPhone($assistantPhone) {
         $this->assistantPhone = $assistantPhone;
-    
+
         return $this;
     }
 
@@ -870,8 +814,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getAssistantPhone()
-    {
+    public function getAssistantPhone() {
         return $this->assistantPhone;
     }
 
@@ -881,10 +824,9 @@ class Contacts
      * @param string $leadSource
      * @return Contacts
      */
-    public function setLeadSource($leadSource)
-    {
+    public function setLeadSource($leadSource) {
         $this->leadSource = $leadSource;
-    
+
         return $this;
     }
 
@@ -893,8 +835,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getLeadSource()
-    {
+    public function getLeadSource() {
         return $this->leadSource;
     }
 
@@ -904,10 +845,9 @@ class Contacts
      * @param string $reportsToId
      * @return Contacts
      */
-    public function setReportsToId($reportsToId)
-    {
+    public function setReportsToId($reportsToId) {
         $this->reportsToId = $reportsToId;
-    
+
         return $this;
     }
 
@@ -916,8 +856,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getReportsToId()
-    {
+    public function getReportsToId() {
         return $this->reportsToId;
     }
 
@@ -927,10 +866,9 @@ class Contacts
      * @param \DateTime $birthdate
      * @return Contacts
      */
-    public function setBirthdate($birthdate)
-    {
+    public function setBirthdate($birthdate) {
         $this->birthdate = $birthdate;
-    
+
         return $this;
     }
 
@@ -939,8 +877,7 @@ class Contacts
      *
      * @return \DateTime 
      */
-    public function getBirthdate()
-    {
+    public function getBirthdate() {
         return $this->birthdate;
     }
 
@@ -950,10 +887,9 @@ class Contacts
      * @param string $campaignId
      * @return Contacts
      */
-    public function setCampaignId($campaignId)
-    {
+    public function setCampaignId($campaignId) {
         $this->campaignId = $campaignId;
-    
+
         return $this;
     }
 
@@ -962,8 +898,7 @@ class Contacts
      *
      * @return string 
      */
-    public function getCampaignId()
-    {
+    public function getCampaignId() {
         return $this->campaignId;
     }
 
@@ -972,8 +907,8 @@ class Contacts
      *
      * @return string 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

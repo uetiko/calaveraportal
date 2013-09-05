@@ -44,6 +44,13 @@ class CallsContacts
      */
     private $id;
 
+    /**
+     * seting id sugarcrm formart
+     * @param string $id
+     */
+    public function __construct($id) {
+        $this->id = $id;
+    }
 
     /**
      * Set callId

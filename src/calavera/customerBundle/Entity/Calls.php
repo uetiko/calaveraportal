@@ -149,6 +149,13 @@ class Calls
      */
     private $id;
 
+    /**
+     * Seting Id
+     * @param string $id
+     */
+    public function __construct($id) {
+        $this->id = $id;
+    }
 
     /**
      * Set name
