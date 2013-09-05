@@ -43,6 +43,7 @@ menu{
     color:#fff;
     font:bold;
     padding:10px;
+    float: left;
 }
 menu:hover{
     background:-moz-linear-gradient(#FFF 0%, #C4C4C4 100%);
