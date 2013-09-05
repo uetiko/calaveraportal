@@ -1,2 +1,32 @@
 {% extends 'calaveracustomerBundle::base.html.twig'%}
 {% block title %}Contacto{% endblock %}
+{% block body %}
+
+<div id="formulario">
+    <h1>Contacta con nosotros</h1>
+    <div id="formularioContacta">
+        <form id="contact_form" action="{{ path('_contactoRegistro') }}" method="POST">
+            <fieldset>
+                <label class="label_form">Nombre y Apellidos</label>
+                <input id="nombre" type="text" name="nombre" value="" placeholder="fulanito">
+                <label class="label_form">Teléfono</label>
+                <input id="telefono" type="text" name="telefono" value="" class="inputPeq" required pattern="[0-9]" title="sólo números"/>
+                <label class="label_form">E-mail</label>
+                <input id="email" type="email" id="email_addr" name="email_addr">
+                <label class="label_form">Asunto</label>
+                <input id="asunto" type="text" name="asunto" value="" class="inputMed">
+                <label class="label_form">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" class="inputGran"></textarea>
+                <div id="suscription-submit">
+                    <button id="suscription-submit" type="submit">Envíar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+<form id="contact_form" action="{{ path('_contactoRegistro') }}" method="POST">
+</form>
+
+{% endblock %}

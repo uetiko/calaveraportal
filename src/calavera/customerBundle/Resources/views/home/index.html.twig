@@ -3,44 +3,23 @@
 {% block stylesheets %}
      <link rel="stylesheet" href="{{ asset('bundles/calaveracustomer/css/home.css') }}" type="text/css" />
 {% endblock %}
+{% block header %}
+     <img src="{{ asset('bundles/calaveracustomer/images/header/header1.jpg') }}">
+{% endblock %}
 {% block body %}
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="{{ asset('bundles/calaveracustomer/images/swiper_home/slider_calavera1.jpg') }}" /></div>
-        <div class="swiper-slide"><img src="{{ asset('bundles/calaveracustomer/images/swiper_home/slider_calavera2.png') }}" /></div>
-        <div class="swiper-slide"><img src="{{ asset('bundles/calaveracustomer/images/swiper_home/slider_calavera3.jpg') }}" /></div>
-        <div class="swiper-slide"><img src="{{ asset('bundles/calaveracustomer/images/swiper_home/slider_calavera4.jpg') }}" /></div>
-        <div class="swiper-slide">
-            <span class="color-home-slider"><p>Imagen Creativa Profesional
-                Somos un espacio para la generación de ideas y desarrollo de las artes visuales. Especializados en la fotografía publicitaria y totalmente personalizada.
-                </p>
-                <p>
-                    Información General
-Cita Previa
-Telefono
-correo electrónico 
-Mensaje privado en Facebook
-Portafolios de nuestro fotógrafos:
-http://www.flickr.com/photos/calaverastudios
-http://www.flickr.com/photos/deathnameless
-http://www.flickr.com/photos/zoesenkrad/
-Ilustración:
-http://zoesenkrad.deviantart.com/
-Siguenos en Twitter: @Calavera_Studio
-                </p>
-            </span></div>
-    </div>
-</div>
-<div class="pagination"><span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span><span class="swiper-pagination-switch swiper-visible-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span></div>
-<script>
-  var mySwiper = new Swiper('.swiper-container',{
-    pagination: '.pagination',
-    paginationClickable: true,
-    centeredSlides: true,
-    slidesPerView: 3,
-    watchActiveIndex: true
-  })
-  </script>
+     <div id="home-calavera-">
+         <article>
+         <h1>Calavera Studio</h1>
+         <p>
+             Somos un estudio de diseño gráfico ubicados al sur de la ciudad de México especializados en la fotografía y 
+             la ilustración, así mismo ofrecemos servicios de diseño y creación/administración de portales web a la medida.
+         </p>
+         <p>
+             Nuestro equipo de trabajo desarrollara la solución mas efectiva para su empresa con la finalidad de impactar su 
+             marca/servicio en el mercado, dotanto de una imagen fresca y profecional que genere confianza.
+         </p>
+         </article>
+     </div>
 
 {% endblock %}
 

@@ -6,26 +6,52 @@
         {% block stylesheets %}{% endblock %}
         <script src="{{ asset('bundles/calaveracustomer/js/jquery-1.10.2.js') }}"></script>
         <script src="{{ asset('bundles/calaveracustomer/js/idangerous.swiper.js') }}"></script>
-        
+
         <link rel="stylesheet" href="{{ asset('bundles/calaveracustomer/css/menu.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/calaveracustomer/css/general.css') }}" type="text/css" />
         <link rel="stylesheet" href="{{ asset('bundles/calaveracustomer/css/idangerous.swiper.css') }}" type="text/css" />
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <header id="calavera-header">
+        <header id="header-general">
+            {% block header %}{% endblock %}
+        </header>
+
+        <menu id="calavera-header">
             <nav id="calavera-nav-header">
                 <a href="{{ url('home') }}/"><menu>Home</menu></a>
-                <a href="{{ url('_soluciones') }}"><menu>Solutions</menu></a>
-                <a href="{{ url('_contacto') }}"><menu>contacto</menu></a>
+                <a href="{{ url('_nosotros') }}"><menu>Nosotros</menu></a>
+                <a href="{{ url('_servicios') }}"><menu>Servicios</menu></a>
+                <a href="{{ url('_portafolio') }}"><menu>Portafolio</menu></a>
                 <a href="{{ url('_blog') }}"><menu>blog</menu></a>
+                <a href="{{ url('_contacto') }}"><menu>Contacto</menu></a>
                 <menu>Clinte</menu>
             </nav>
-        </header>
+        </menu>
+
         <section>
+            <div id="container">
             {% block body %}{% endblock %}
             {% block javascripts %}{% endblock %}
+            </div>
         </section>
-        <footer>
+        <footer id="footer">
+            <div class="newsletter">
+                <a href="{{ url('_newsletter')}}"><img src="{{ asset('bundles/calaveracustomer/images/icons/footer/newsletter_footer.png') }}"></a>
+            </div>
+            <div class="calavera-address">
+                <pre>
+                    <address>
+                        
+                    </address>
+                </pre>
+            </div>
+            <div class="footer-social-network">
+                <a href="http://www.twitter.com/Calavera_Studio" target="_blank"> <img src="{{ asset('bundles/calaveracustomer/images/icons/footer/tw_footer.png') }}" /></a>
+                <a href="http://www.facebook.com/CalaveraStudios" target="_blank"> <img src="{{ asset('bundles/calaveracustomer/images/icons/footer/fb_footer.png') }}" /></a>
+                <a href=""> <img src="{{ asset('bundles/calaveracustomer/images/icons/footer/vine_footer.png') }}" /></a>
+                <a href=""> <img src="{{ asset('bundles/calaveracustomer/images/icons/footer/fr_footer.png') }}" /></a>
+            </div>
             <!-- Piwik -->
             <script type="text/javascript">
               var _paq = _paq || [];
@@ -40,11 +66,11 @@
                 var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
                 g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
               })();
-            </script>
-            <!-- End Piwik Code -->
-            <!-- Piwik Image Tracker -->
-            <img src="http://piwik.local/piwik.php?idsite=1&amp;rec=1" style="border:0" alt="" />
-            <!-- End Piwik -->
+                </script>
+                <!-- End Piwik Code -->
+                <!-- Piwik Image Tracker -->
+                <img src="http://piwik.local/piwik.php?idsite=1&amp;rec=1" style="border:0" alt="" />
+                <!-- End Piwik -->
         </footer>
-        </body>
-    </html>
+    </body>
+</html>
