@@ -123,13 +123,18 @@ class SugarCRMDAO {
      */
     public function creaContacto(ContactoDTO $to) {
         $success = FALSE;
-        $contacto = new Contacts();
+        $contacto = new calavera\customerBundle\Entity\Contacts();
         $contacto->setId($to->getId());
         $contacto->setFirstName($to->getNombre());
         $contacto->setLastName($to->getApellido());
         $contacto->setTitle($to->getAsunto());
         $contacto->setPhoneWork($to->getTelefono());
         $contacto->setDescription($to->getMensaje());
+        $contacto->setDateModified(Utils::getCurrentDateAndTime());
+        $contacto->setDateEntered(Utils::getCurrentDateAndTime());
+        $contacto->setDeleted(FALSE);
+        $contacto->setCreatedBy('1');
+        $contacto->setModifiedUserId('1');
         try {
             $this->em->persist($contacto);
             $this->em->flush();
