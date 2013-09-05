@@ -18,6 +18,10 @@ _contacto:
   pattern: /contacto
   defaults: { _controller: calaveracustomerBundle:Contacto:index }
   
+_contactoRegistro:
+  pattern: /contacto/send
+  defaults: { _controller: calaveracustomerBundle:Contacto:sendRegister }
+  
 _soluciones:
   pattern: /soluciones
   defaults: { _controller: calaveracustomerBundle:Soluciones:index }
@@ -25,3 +29,39 @@ _soluciones:
 _blog : 
   pattern: /blog
   defaults : { _controller: calaveracustomerBundle:Blog:index }
+  
+_nosotros :
+  pattern: /nosotros
+  defaults: { _controller: calaveracustomerBundle:Nosotros:index }
+
+_nosotros_integrntes:
+  pattern: /nosotros/integrantes
+  defaults: { _controller: calaveracustomerBundle:Nosotros:integrantes }
+
+_nosotros_instalaciones:
+  pattern: /nosotros/instalaciones
+  defaults: { _controller: calaveracustomerBundle:Nosotros:instalaciones }
+  
+_servicios:
+  pattern: /servicios
+  defaults: { _controller: calaveracustomerBundle:Servicios:index }
+  
+_serviciosWeb:
+  pattern: /servicios/web_desing
+  defaults: { _controller: calaveracustomerBundle:Servicios:webDesing }
+  
+_serviciosDisenio:
+  pattern: /servicios/graphic_desing
+  defaults: { _controller: calaveracustomerBundle:Servicios:graphicDesing }
+
+_serviciosFotografia:
+  pattern: /servicios/photography
+  defaults: { _controller: calaveracustomerBundle:Servicios:webDesing }
+  
+_serviciosFotografia:
+  pattern: /servicios/photography
+  defaults: { _controller: calaveracustomerBundle:Servicios:index }
+
+_portafolio:
+  pattern: /portafolio
+  defaults: { _controller: calaveracustomerBundle:Portafolio:index }
