@@ -1,11 +1,29 @@
-/web/bundles/
-/app/bootstrap.php.cache
-/app/cache/*
-/app/config/parameters.yml
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
-/build/
-/vendor/
-/bin/
 /composer.phar
+
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+/build/
+/bin/
+
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+
+#entities
+src/calavera/customerBundle/Entity/*
+src/calavera/customerBundle/Entity/*.php~
+
+# Linux
+# .*
+.gitignore
+.htaccess
+# *~
+.project
