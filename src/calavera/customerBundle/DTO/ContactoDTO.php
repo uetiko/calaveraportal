@@ -1,5 +1,4 @@
 <?php
-
 namespace calavera\customerBundle\DTO;
 
 /**
@@ -16,6 +15,17 @@ class ContactoDTO {
     private $email = NULL;
     private $asunto = NULL;
     private $mensaje = NULL;
+    private $success = NULL;
+    /**
+     *
+     * @var \Swift_Message
+     */
+    private $message = NULL;
+    /**
+     *
+     * @var \ArrayObject
+     */
+    private $params = NULL;
 
     public function __construct($id) {
         $this->id = $id;
@@ -75,6 +85,46 @@ class ContactoDTO {
 
     public function setMensaje($mensaje) {
         $this->mensaje = $mensaje;
+    }
+    /**
+     * 
+     * @param boolean $success
+     */
+    public function setSuccessStatus($success){
+        $this->success = $success;
+    }
+    /**
+     * 
+     * @return boolean
+     */
+    public function getSuccessStatus(){
+        return $this->success;
+    }
+    /**
+     * 
+     * @param \Swift_Message $message
+     */
+    public function setSwiftMessage($message){
+        $this->message = $message;
+    }
+    /**
+     * 
+     * @return \Swift_Message
+     */
+    public function getSwiftMessage(){
+        return $this->message;
+    }
+    
+    public function setParams(\ArrayObject $params){
+        $this->params = $params;
+    }
+    
+    public function getParams(){
+        return $this->params;
+    }
+    
+    public function getParamsToArray(){
+        return $this->params->getArrayCopy();
     }
 
 }
