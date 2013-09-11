@@ -31,7 +31,7 @@ class SugarCRMDAO {
     }
 
     public function registraLlamadaSugar(ContactoDTO $to) {
-        
+        $success = false;
         switch ($this->creaContacto($to)) {
             case TRUE:
                 if (FALSE == $this->existsEmailSugar($to->getEmail())) {
@@ -45,10 +45,13 @@ class SugarCRMDAO {
                 }
                 $idCall = $this->createCallSugar($to);
                 $this->createCallContactSugar($to, $idCall);
+                $success = TRUE;
                 break;
             case FALSE:
+                $success = FALSE;
                 break;
         }
+        return $success;
     }
 
     public function registraEmailSugar(ContactoDTO $to) {
