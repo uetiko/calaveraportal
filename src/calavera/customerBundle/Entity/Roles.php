@@ -6,53 +6,77 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Roles
+ *
+ * @ORM\Table(name="roles")
+ * @ORM\Entity
  */
 class Roles
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_user_id", type="string", length=36, nullable=true)
      */
     private $modifiedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=150, nullable=true)
      */
     private $name;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modules", type="text", nullable=true)
      */
     private $modules;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

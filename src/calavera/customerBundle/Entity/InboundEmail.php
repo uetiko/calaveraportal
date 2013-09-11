@@ -6,113 +6,161 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * InboundEmail
+ *
+ * @ORM\Table(name="inbound_email")
+ * @ORM\Entity
  */
 class InboundEmail
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_user_id", type="string", length=36, nullable=true)
      */
     private $modifiedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=100, nullable=true)
      */
     private $status;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="server_url", type="string", length=100, nullable=true)
      */
     private $serverUrl;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="email_user", type="string", length=100, nullable=true)
      */
     private $emailUser;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="email_password", type="string", length=100, nullable=true)
      */
     private $emailPassword;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="port", type="integer", nullable=true)
      */
     private $port;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="service", type="string", length=50, nullable=true)
      */
     private $service;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="mailbox", type="text", nullable=true)
      */
     private $mailbox;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="delete_seen", type="boolean", nullable=true)
      */
     private $deleteSeen;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="mailbox_type", type="string", length=10, nullable=true)
      */
     private $mailboxType;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="template_id", type="string", length=36, nullable=true)
      */
     private $templateId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="stored_options", type="text", nullable=true)
      */
     private $storedOptions;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="group_id", type="string", length=36, nullable=true)
      */
     private $groupId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="is_personal", type="boolean", nullable=true)
      */
     private $isPersonal;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="groupfolder_id", type="string", length=36, nullable=true)
      */
     private $groupfolderId;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

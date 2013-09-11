@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ProjectsOpportunities
+ *
+ * @ORM\Table(name="projects_opportunities")
+ * @ORM\Entity
  */
 class ProjectsOpportunities
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="opportunity_id", type="string", length=36, nullable=true)
      */
     private $opportunityId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="project_id", type="string", length=36, nullable=true)
      */
     private $projectId;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

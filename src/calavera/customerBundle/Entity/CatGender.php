@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="cat_gender")
  * @ORM\Entity
  */
-class CatGender {
-
+class CatGender
+{
     /**
      * @var integer
      *
@@ -28,14 +28,7 @@ class CatGender {
      */
     private $gender;
 
-    /**
-     * Get idGender
-     *
-     * @return integer 
-     */
-    public function getIdGender() {
-        return $this->idGender;
-    }
+
 
     /**
      * Set gender
@@ -43,9 +36,10 @@ class CatGender {
      * @param string $gender
      * @return CatGender
      */
-    public function setGender($gender) {
+    public function setGender($gender)
+    {
         $this->gender = $gender;
-
+    
         return $this;
     }
 
@@ -54,8 +48,18 @@ class CatGender {
      *
      * @return string 
      */
-    public function getGender() {
+    public function getGender()
+    {
         return $this->gender;
     }
 
+    /**
+     * Get idGender
+     *
+     * @return integer 
+     */
+    public function getIdGender()
+    {
+        return $this->idGender;
+    }
 }

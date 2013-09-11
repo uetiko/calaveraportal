@@ -6,28 +6,42 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * UsersPasswordLink
+ *
+ * @ORM\Table(name="users_password_link")
+ * @ORM\Entity
  */
 class UsersPasswordLink
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=36, nullable=true)
      */
     private $username;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_generated", type="datetime", nullable=true)
      */
     private $dateGenerated;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

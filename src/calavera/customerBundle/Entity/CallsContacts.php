@@ -6,49 +6,64 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CallsContacts
+ *
+ * @ORM\Table(name="calls_contacts")
+ * @ORM\Entity
  */
 class CallsContacts
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="call_id", type="string", length=36, nullable=true)
      */
     private $callId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="contact_id", type="string", length=36, nullable=true)
      */
     private $contactId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="required", type="string", length=1, nullable=true)
      */
     private $required;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="accept_status", type="string", length=25, nullable=true)
      */
     private $acceptStatus;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
-
-    /**
-     * seting id sugarcrm formart
-     * @param string $id
-     */
-    public function __construct($id) {
+    public function __construct($id){
         $this->id = $id;
     }
 

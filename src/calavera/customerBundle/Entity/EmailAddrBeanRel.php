@@ -6,58 +6,80 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EmailAddrBeanRel
+ *
+ * @ORM\Table(name="email_addr_bean_rel")
+ * @ORM\Entity
  */
 class EmailAddrBeanRel
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_address_id", type="string", length=36, nullable=false)
      */
     private $emailAddressId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="bean_id", type="string", length=36, nullable=false)
      */
     private $beanId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="bean_module", type="string", length=100, nullable=true)
      */
     private $beanModule;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="primary_address", type="boolean", nullable=true)
      */
     private $primaryAddress;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="reply_to_address", type="boolean", nullable=true)
      */
     private $replyToAddress;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     private $dateCreated;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
-     * @var string
-     */
-    private $id;
-
-    
-    /**
-     * 
-     * @param string $id
+     * Set the id
+     * @param String $id
      */
     public function __construct($id) {
         $this->id = $id;
@@ -186,7 +208,7 @@ class EmailAddrBeanRel
      */
     public function setDateCreated($dateCreated)
     {
-        $this->dateCreated = $dateCreated;
+        $this->dateCreated = new \DateTime($dateCreated);
     
         return $this;
     }
@@ -209,7 +231,7 @@ class EmailAddrBeanRel
      */
     public function setDateModified($dateModified)
     {
-        $this->dateModified = $dateModified;
+        $this->dateModified = new \DateTime($dateModified);
     
         return $this;
     }

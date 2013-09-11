@@ -6,154 +6,211 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Calls
+ *
+ * @ORM\Table(name="calls")
+ * @ORM\Entity
  */
 class Calls
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=true)
      */
     private $name;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_user_id", type="string", length=36, nullable=true)
      */
     private $modifiedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="assigned_user_id", type="string", length=36, nullable=true)
      */
     private $assignedUserId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="duration_hours", type="integer", nullable=true)
      */
     private $durationHours;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="duration_minutes", type="integer", nullable=true)
      */
     private $durationMinutes;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_start", type="datetime", nullable=true)
      */
     private $dateStart;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_end", type="datetime", nullable=true)
      */
     private $dateEnd;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="parent_type", type="string", length=255, nullable=true)
      */
     private $parentType;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=100, nullable=true)
      */
     private $status;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="direction", type="string", length=100, nullable=true)
      */
     private $direction;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="parent_id", type="string", length=36, nullable=true)
      */
     private $parentId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="reminder_time", type="integer", nullable=true)
      */
     private $reminderTime;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="email_reminder_time", type="integer", nullable=true)
      */
     private $emailReminderTime;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="email_reminder_sent", type="boolean", nullable=true)
      */
     private $emailReminderSent;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="outlook_id", type="string", length=255, nullable=true)
      */
     private $outlookId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="repeat_type", type="string", length=36, nullable=true)
      */
     private $repeatType;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="repeat_interval", type="integer", nullable=true)
      */
     private $repeatInterval;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="repeat_dow", type="string", length=7, nullable=true)
      */
     private $repeatDow;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="repeat_until", type="date", nullable=true)
      */
     private $repeatUntil;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="repeat_count", type="integer", nullable=true)
      */
     private $repeatCount;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="repeat_parent_id", type="string", length=36, nullable=true)
      */
     private $repeatParentId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="recurring_source", type="string", length=36, nullable=true)
      */
     private $recurringSource;
 
-    /**
-     * @var string
-     */
-    private $id;
-
-    /**
-     * Seting Id
-     * @param string $id
-     */
-    public function __construct($id) {
+    public function __construct($id){
         $this->id = $id;
     }
 

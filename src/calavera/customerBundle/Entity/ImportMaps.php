@@ -6,78 +6,112 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ImportMaps
+ *
+ * @ORM\Table(name="import_maps")
+ * @ORM\Entity
  */
 class ImportMaps
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=254, nullable=true)
      */
     private $name;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="source", type="string", length=36, nullable=true)
      */
     private $source;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="enclosure", type="string", length=1, nullable=true)
      */
     private $enclosure;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="delimiter", type="string", length=1, nullable=true)
      */
     private $delimiter;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="module", type="string", length=36, nullable=true)
      */
     private $module;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="default_values", type="text", nullable=true)
      */
     private $defaultValues;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="has_header", type="boolean", nullable=true)
      */
     private $hasHeader;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="assigned_user_id", type="string", length=36, nullable=true)
      */
     private $assignedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="is_published", type="string", length=3, nullable=true)
      */
     private $isPublished;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

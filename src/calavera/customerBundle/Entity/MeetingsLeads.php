@@ -6,43 +6,63 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * MeetingsLeads
+ *
+ * @ORM\Table(name="meetings_leads")
+ * @ORM\Entity
  */
 class MeetingsLeads
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meeting_id", type="string", length=36, nullable=true)
      */
     private $meetingId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="lead_id", type="string", length=36, nullable=true)
      */
     private $leadId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="required", type="string", length=1, nullable=true)
      */
     private $required;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="accept_status", type="string", length=25, nullable=true)
      */
     private $acceptStatus;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

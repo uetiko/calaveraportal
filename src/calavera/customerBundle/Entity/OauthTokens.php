@@ -6,53 +6,79 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * OauthTokens
+ *
+ * @ORM\Table(name="oauth_tokens")
+ * @ORM\Entity
  */
 class OauthTokens
 {
     /**
      * @var string
-     */
-    private $secret;
-
-    /**
-     * @var string
-     */
-    private $tstate;
-
-    /**
-     * @var string
-     */
-    private $consumer;
-
-    /**
-     * @var integer
-     */
-    private $tokenTs;
-
-    /**
-     * @var string
-     */
-    private $verify;
-
-    /**
-     * @var string
-     */
-    private $callbackUrl;
-
-    /**
-     * @var string
-     */
-    private $assignedUserId;
-
-    /**
-     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $id;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $deleted;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="secret", type="string", length=32, nullable=true)
+     */
+    private $secret;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tstate", type="string", length=1, nullable=true)
+     */
+    private $tstate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="consumer", type="string", length=36, nullable=false)
+     */
+    private $consumer;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="token_ts", type="bigint", nullable=true)
+     */
+    private $tokenTs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="verify", type="string", length=32, nullable=true)
+     */
+    private $verify;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="callback_url", type="string", length=255, nullable=true)
+     */
+    private $callbackUrl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="assigned_user_id", type="string", length=36, nullable=true)
+     */
+    private $assignedUserId;
+
 
 
     /**

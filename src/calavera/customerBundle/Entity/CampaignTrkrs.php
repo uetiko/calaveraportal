@@ -6,63 +6,91 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CampaignTrkrs
+ *
+ * @ORM\Table(name="campaign_trkrs")
+ * @ORM\Entity
  */
 class CampaignTrkrs
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tracker_name", type="string", length=30, nullable=true)
      */
     private $trackerName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="tracker_url", type="string", length=255, nullable=true)
      */
     private $trackerUrl;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="tracker_key", type="integer", nullable=false)
      */
     private $trackerKey;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="campaign_id", type="string", length=36, nullable=true)
      */
     private $campaignId;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_user_id", type="string", length=36, nullable=true)
      */
     private $modifiedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="is_optout", type="boolean", nullable=true)
      */
     private $isOptout;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

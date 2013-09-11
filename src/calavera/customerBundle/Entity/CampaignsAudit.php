@@ -6,58 +6,84 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CampaignsAudit
+ *
+ * @ORM\Table(name="campaigns_audit")
+ * @ORM\Entity
  */
 class CampaignsAudit
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="parent_id", type="string", length=36, nullable=false)
      */
     private $parentId;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     private $dateCreated;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field_name", type="string", length=100, nullable=true)
      */
     private $fieldName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="data_type", type="string", length=100, nullable=true)
      */
     private $dataType;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="before_value_string", type="string", length=255, nullable=true)
      */
     private $beforeValueString;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="after_value_string", type="string", length=255, nullable=true)
      */
     private $afterValueString;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="before_value_text", type="text", nullable=true)
      */
     private $beforeValueText;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="after_value_text", type="text", nullable=true)
      */
     private $afterValueText;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

@@ -6,78 +6,112 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CustomFields
+ *
+ * @ORM\Table(name="custom_fields")
+ * @ORM\Entity
  */
 class CustomFields
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_custom_fields", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCustomFields;
+
+    /**
      * @var string
+     *
+     * @ORM\Column(name="bean_id", type="string", length=36, nullable=true)
      */
     private $beanId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="set_num", type="integer", nullable=true)
      */
     private $setNum;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field0", type="string", length=255, nullable=true)
      */
     private $field0;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field1", type="string", length=255, nullable=true)
      */
     private $field1;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field2", type="string", length=255, nullable=true)
      */
     private $field2;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field3", type="string", length=255, nullable=true)
      */
     private $field3;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field4", type="string", length=255, nullable=true)
      */
     private $field4;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field5", type="string", length=255, nullable=true)
      */
     private $field5;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field6", type="string", length=255, nullable=true)
      */
     private $field6;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field7", type="string", length=255, nullable=true)
      */
     private $field7;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field8", type="string", length=255, nullable=true)
      */
     private $field8;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="field9", type="string", length=255, nullable=true)
      */
     private $field9;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var integer
-     */
-    private $idCustomFields;
 
 
     /**

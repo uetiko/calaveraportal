@@ -6,48 +6,70 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EmailAddresses
+ *
+ * @ORM\Table(name="email_addresses")
+ * @ORM\Entity
  */
 class EmailAddresses
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_address", type="string", length=255, nullable=true)
      */
     private $emailAddress;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="email_address_caps", type="string", length=255, nullable=true)
      */
     private $emailAddressCaps;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="invalid_email", type="boolean", nullable=true)
      */
     private $invalidEmail;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="opt_out", type="boolean", nullable=true)
      */
     private $optOut;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     private $dateCreated;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**
@@ -150,7 +172,7 @@ class EmailAddresses
      */
     public function setDateCreated($dateCreated)
     {
-        $this->dateCreated = $dateCreated;
+        $this->dateCreated = new \DateTime($dateCreated);
     
         return $this;
     }
@@ -173,7 +195,7 @@ class EmailAddresses
      */
     public function setDateModified($dateModified)
     {
-        $this->dateModified = $dateModified;
+        $this->dateModified = new \DateTime($dateModified);
     
         return $this;
     }
@@ -220,8 +242,7 @@ class EmailAddresses
     {
         return $this->id;
     }
-    
-    public function setId($id) {
+    public function setId($id){
         $this->id = $id;
     }
 }

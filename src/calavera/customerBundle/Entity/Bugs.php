@@ -6,103 +6,147 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Bugs
+ *
+ * @ORM\Table(name="bugs")
+ * @ORM\Entity
  */
 class Bugs
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_user_id", type="string", length=36, nullable=true)
      */
     private $modifiedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="assigned_user_id", type="string", length=36, nullable=true)
      */
     private $assignedUserId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="bug_number", type="integer", nullable=false)
      */
     private $bugNumber;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255, nullable=true)
      */
     private $type;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=100, nullable=true)
      */
     private $status;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="priority", type="string", length=100, nullable=true)
      */
     private $priority;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="resolution", type="string", length=255, nullable=true)
      */
     private $resolution;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="work_log", type="text", nullable=true)
      */
     private $workLog;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="found_in_release", type="string", length=255, nullable=true)
      */
     private $foundInRelease;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="fixed_in_release", type="string", length=255, nullable=true)
      */
     private $fixedInRelease;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="source", type="string", length=255, nullable=true)
      */
     private $source;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="product_category", type="string", length=255, nullable=true)
      */
     private $productCategory;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

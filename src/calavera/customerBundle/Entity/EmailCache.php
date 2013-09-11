@@ -6,93 +6,133 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EmailCache
+ *
+ * @ORM\Table(name="email_cache")
+ * @ORM\Entity
  */
 class EmailCache
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_email_cache", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idEmailCache;
+
+    /**
      * @var string
+     *
+     * @ORM\Column(name="ie_id", type="string", length=36, nullable=true)
      */
     private $ieId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="mbox", type="string", length=60, nullable=true)
      */
     private $mbox;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="subject", type="string", length=255, nullable=true)
      */
     private $subject;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="fromaddr", type="string", length=100, nullable=true)
      */
     private $fromaddr;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="toaddr", type="string", length=255, nullable=true)
      */
     private $toaddr;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="senddate", type="datetime", nullable=true)
      */
     private $senddate;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="message_id", type="string", length=255, nullable=true)
      */
     private $messageId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="mailsize", type="integer", nullable=true)
      */
     private $mailsize;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="imap_uid", type="integer", nullable=true)
      */
     private $imapUid;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="msgno", type="integer", nullable=true)
      */
     private $msgno;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="recent", type="boolean", nullable=true)
      */
     private $recent;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="flagged", type="boolean", nullable=true)
      */
     private $flagged;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="answered", type="boolean", nullable=true)
      */
     private $answered;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="seen", type="boolean", nullable=true)
      */
     private $seen;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="draft", type="boolean", nullable=true)
      */
     private $draft;
 
-    /**
-     * @var integer
-     */
-    private $idEmailCache;
 
 
     /**

@@ -6,58 +6,84 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Currencies
+ *
+ * @ORM\Table(name="currencies")
+ * @ORM\Entity
  */
 class Currencies
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=36, nullable=true)
      */
     private $name;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="symbol", type="string", length=36, nullable=true)
      */
     private $symbol;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="iso4217", type="string", length=3, nullable=true)
      */
     private $iso4217;
 
     /**
      * @var float
+     *
+     * @ORM\Column(name="conversion_rate", type="float", nullable=true)
      */
     private $conversionRate;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=100, nullable=true)
      */
     private $status;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=false)
      */
     private $createdBy;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

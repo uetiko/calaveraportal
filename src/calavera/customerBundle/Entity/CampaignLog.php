@@ -6,88 +6,126 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CampaignLog
+ *
+ * @ORM\Table(name="campaign_log")
+ * @ORM\Entity
  */
 class CampaignLog
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="campaign_id", type="string", length=36, nullable=true)
      */
     private $campaignId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="target_tracker_key", type="string", length=36, nullable=true)
      */
     private $targetTrackerKey;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="target_id", type="string", length=36, nullable=true)
      */
     private $targetId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="target_type", type="string", length=100, nullable=true)
      */
     private $targetType;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="activity_type", type="string", length=100, nullable=true)
      */
     private $activityType;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="activity_date", type="datetime", nullable=true)
      */
     private $activityDate;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="related_id", type="string", length=36, nullable=true)
      */
     private $relatedId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="related_type", type="string", length=100, nullable=true)
      */
     private $relatedType;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="archived", type="boolean", nullable=true)
      */
     private $archived;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="hits", type="integer", nullable=true)
      */
     private $hits;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="list_id", type="string", length=36, nullable=true)
      */
     private $listId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="more_information", type="string", length=100, nullable=true)
      */
     private $moreInformation;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="marketing_id", type="string", length=36, nullable=true)
      */
     private $marketingId;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

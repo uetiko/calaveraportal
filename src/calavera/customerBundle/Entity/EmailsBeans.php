@@ -6,43 +6,63 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EmailsBeans
+ *
+ * @ORM\Table(name="emails_beans")
+ * @ORM\Entity
  */
 class EmailsBeans
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_id", type="string", length=36, nullable=true)
      */
     private $emailId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="bean_id", type="string", length=36, nullable=true)
      */
     private $beanId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="bean_module", type="string", length=100, nullable=true)
      */
     private $beanModule;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="campaign_data", type="text", nullable=true)
      */
     private $campaignData;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

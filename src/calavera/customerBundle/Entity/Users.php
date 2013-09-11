@@ -6,198 +6,280 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Users
+ *
+ * @ORM\Table(name="users")
+ * @ORM\Entity
  */
 class Users
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="user_name", type="string", length=60, nullable=true)
      */
     private $userName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="user_hash", type="string", length=255, nullable=true)
      */
     private $userHash;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="system_generated_password", type="boolean", nullable=true)
      */
     private $systemGeneratedPassword;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="pwd_last_changed", type="datetime", nullable=true)
      */
     private $pwdLastChanged;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="authenticate_id", type="string", length=100, nullable=true)
      */
     private $authenticateId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="sugar_login", type="boolean", nullable=true)
      */
     private $sugarLogin;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=30, nullable=true)
      */
     private $firstName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=30, nullable=true)
      */
     private $lastName;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="is_admin", type="boolean", nullable=true)
      */
     private $isAdmin;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="external_auth_only", type="boolean", nullable=true)
      */
     private $externalAuthOnly;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="receive_notifications", type="boolean", nullable=true)
      */
     private $receiveNotifications;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_user_id", type="string", length=36, nullable=true)
      */
     private $modifiedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=50, nullable=true)
      */
     private $title;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="department", type="string", length=50, nullable=true)
      */
     private $department;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="phone_home", type="string", length=50, nullable=true)
      */
     private $phoneHome;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="phone_mobile", type="string", length=50, nullable=true)
      */
     private $phoneMobile;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="phone_work", type="string", length=50, nullable=true)
      */
     private $phoneWork;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="phone_other", type="string", length=50, nullable=true)
      */
     private $phoneOther;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="phone_fax", type="string", length=50, nullable=true)
      */
     private $phoneFax;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=100, nullable=true)
      */
     private $status;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="address_street", type="string", length=150, nullable=true)
      */
     private $addressStreet;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="address_city", type="string", length=100, nullable=true)
      */
     private $addressCity;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="address_state", type="string", length=100, nullable=true)
      */
     private $addressState;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="address_country", type="string", length=100, nullable=true)
      */
     private $addressCountry;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="address_postalcode", type="string", length=20, nullable=true)
      */
     private $addressPostalcode;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="portal_only", type="boolean", nullable=true)
      */
     private $portalOnly;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="show_on_employees", type="boolean", nullable=true)
      */
     private $showOnEmployees;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="employee_status", type="string", length=100, nullable=true)
      */
     private $employeeStatus;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="messenger_id", type="string", length=100, nullable=true)
      */
     private $messengerId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="messenger_type", type="string", length=100, nullable=true)
      */
     private $messengerType;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="reports_to_id", type="string", length=36, nullable=true)
      */
     private $reportsToId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="is_group", type="boolean", nullable=true)
      */
     private $isGroup;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EmailsEmailAddrRel
+ *
+ * @ORM\Table(name="emails_email_addr_rel")
+ * @ORM\Entity
  */
 class EmailsEmailAddrRel
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_id", type="string", length=36, nullable=false)
      */
     private $emailId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="address_type", type="string", length=4, nullable=true)
      */
     private $addressType;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="email_address_id", type="string", length=36, nullable=false)
      */
     private $emailAddressId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

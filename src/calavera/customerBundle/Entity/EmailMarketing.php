@@ -6,93 +6,133 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EmailMarketing
+ *
+ * @ORM\Table(name="email_marketing")
+ * @ORM\Entity
  */
 class EmailMarketing
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_user_id", type="string", length=36, nullable=true)
      */
     private $modifiedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="from_name", type="string", length=100, nullable=true)
      */
     private $fromName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="from_addr", type="string", length=100, nullable=true)
      */
     private $fromAddr;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="reply_to_name", type="string", length=100, nullable=true)
      */
     private $replyToName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="reply_to_addr", type="string", length=100, nullable=true)
      */
     private $replyToAddr;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="inbound_email_id", type="string", length=36, nullable=true)
      */
     private $inboundEmailId;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_start", type="datetime", nullable=true)
      */
     private $dateStart;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="template_id", type="string", length=36, nullable=false)
      */
     private $templateId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=100, nullable=true)
      */
     private $status;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="campaign_id", type="string", length=36, nullable=true)
      */
     private $campaignId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="all_prospect_lists", type="boolean", nullable=true)
      */
     private $allProspectLists;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

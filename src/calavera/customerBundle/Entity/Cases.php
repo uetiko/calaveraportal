@@ -6,88 +6,126 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Cases
+ *
+ * @ORM\Table(name="cases")
+ * @ORM\Entity
  */
 class Cases
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_user_id", type="string", length=36, nullable=true)
      */
     private $modifiedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="assigned_user_id", type="string", length=36, nullable=true)
      */
     private $assignedUserId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="case_number", type="integer", nullable=false)
      */
     private $caseNumber;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255, nullable=true)
      */
     private $type;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=100, nullable=true)
      */
     private $status;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="priority", type="string", length=100, nullable=true)
      */
     private $priority;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="resolution", type="text", nullable=true)
      */
     private $resolution;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="work_log", type="text", nullable=true)
      */
     private $workLog;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="account_id", type="string", length=36, nullable=true)
      */
     private $accountId;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

@@ -6,28 +6,42 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Config
+ *
+ * @ORM\Table(name="config")
+ * @ORM\Entity
  */
 class Config
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_config", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idConfig;
+
+    /**
      * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=32, nullable=true)
      */
     private $category;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=32, nullable=true)
      */
     private $name;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="value", type="text", nullable=true)
      */
     private $value;
 
-    /**
-     * @var integer
-     */
-    private $idConfig;
 
 
     /**

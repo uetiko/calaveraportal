@@ -6,68 +6,98 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * OutboundEmail
+ *
+ * @ORM\Table(name="outbound_email")
+ * @ORM\Entity
  */
 class OutboundEmail
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=true)
      */
     private $name;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=15, nullable=true)
      */
     private $type;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="user_id", type="string", length=36, nullable=false)
      */
     private $userId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="mail_sendtype", type="string", length=8, nullable=true)
      */
     private $mailSendtype;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="mail_smtptype", type="string", length=20, nullable=true)
      */
     private $mailSmtptype;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="mail_smtpserver", type="string", length=100, nullable=true)
      */
     private $mailSmtpserver;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="mail_smtpport", type="integer", nullable=true)
      */
     private $mailSmtpport;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="mail_smtpuser", type="string", length=100, nullable=true)
      */
     private $mailSmtpuser;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="mail_smtppass", type="string", length=100, nullable=true)
      */
     private $mailSmtppass;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="mail_smtpauth_req", type="boolean", nullable=true)
      */
     private $mailSmtpauthReq;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="mail_smtpssl", type="integer", nullable=true)
      */
     private $mailSmtpssl;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

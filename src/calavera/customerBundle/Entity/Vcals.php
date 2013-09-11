@@ -6,48 +6,70 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Vcals
+ *
+ * @ORM\Table(name="vcals")
+ * @ORM\Entity
  */
 class Vcals
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="user_id", type="string", length=36, nullable=false)
      */
     private $userId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=100, nullable=true)
      */
     private $type;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="source", type="string", length=100, nullable=true)
      */
     private $source;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

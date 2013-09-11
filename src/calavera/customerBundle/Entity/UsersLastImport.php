@@ -6,38 +6,56 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * UsersLastImport
+ *
+ * @ORM\Table(name="users_last_import")
+ * @ORM\Entity
  */
 class UsersLastImport
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="assigned_user_id", type="string", length=36, nullable=true)
      */
     private $assignedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="import_module", type="string", length=36, nullable=true)
      */
     private $importModule;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="bean_type", type="string", length=36, nullable=true)
      */
     private $beanType;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="bean_id", type="string", length=36, nullable=true)
      */
     private $beanId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

@@ -6,38 +6,56 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * InboundEmailAutoreply
+ *
+ * @ORM\Table(name="inbound_email_autoreply")
+ * @ORM\Entity
  */
 class InboundEmailAutoreply
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="autoreplied_to", type="string", length=100, nullable=true)
      */
     private $autorepliedTo;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="ie_id", type="string", length=36, nullable=false)
      */
     private $ieId;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

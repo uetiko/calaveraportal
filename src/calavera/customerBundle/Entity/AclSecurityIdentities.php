@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="acl_security_identities")
  * @ORM\Entity
  */
-class AclSecurityIdentities {
-
+class AclSecurityIdentities
+{
     /**
      * @var integer
      *
@@ -35,14 +35,7 @@ class AclSecurityIdentities {
      */
     private $username;
 
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId() {
-        return $this->id;
-    }
+
 
     /**
      * Set identifier
@@ -50,9 +43,10 @@ class AclSecurityIdentities {
      * @param string $identifier
      * @return AclSecurityIdentities
      */
-    public function setIdentifier($identifier) {
+    public function setIdentifier($identifier)
+    {
         $this->identifier = $identifier;
-
+    
         return $this;
     }
 
@@ -61,7 +55,8 @@ class AclSecurityIdentities {
      *
      * @return string 
      */
-    public function getIdentifier() {
+    public function getIdentifier()
+    {
         return $this->identifier;
     }
 
@@ -71,9 +66,10 @@ class AclSecurityIdentities {
      * @param boolean $username
      * @return AclSecurityIdentities
      */
-    public function setUsername($username) {
+    public function setUsername($username)
+    {
         $this->username = $username;
-
+    
         return $this;
     }
 
@@ -82,8 +78,18 @@ class AclSecurityIdentities {
      *
      * @return boolean 
      */
-    public function getUsername() {
+    public function getUsername()
+    {
         return $this->username;
     }
 
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

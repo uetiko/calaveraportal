@@ -6,48 +6,70 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * UsersSignatures
+ *
+ * @ORM\Table(name="users_signatures")
+ * @ORM\Entity
  */
 class UsersSignatures
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="user_id", type="string", length=36, nullable=true)
      */
     private $userId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="signature", type="text", nullable=true)
      */
     private $signature;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="signature_html", type="text", nullable=true)
      */
     private $signatureHtml;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

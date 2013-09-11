@@ -6,83 +6,119 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Emailman
+ *
+ * @ORM\Table(name="emailman")
+ * @ORM\Entity
  */
 class Emailman
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_entered", type="datetime", nullable=true)
      */
     private $dateEntered;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="user_id", type="string", length=36, nullable=true)
      */
     private $userId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="campaign_id", type="string", length=36, nullable=true)
      */
     private $campaignId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="marketing_id", type="string", length=36, nullable=true)
      */
     private $marketingId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="list_id", type="string", length=36, nullable=true)
      */
     private $listId;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="send_date_time", type="datetime", nullable=true)
      */
     private $sendDateTime;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_user_id", type="string", length=36, nullable=true)
      */
     private $modifiedUserId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="in_queue", type="boolean", nullable=true)
      */
     private $inQueue;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="in_queue_date", type="datetime", nullable=true)
      */
     private $inQueueDate;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="send_attempts", type="integer", nullable=true)
      */
     private $sendAttempts;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="related_id", type="string", length=36, nullable=true)
      */
     private $relatedId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="related_type", type="string", length=100, nullable=true)
      */
     private $relatedType;
 
-    /**
-     * @var integer
-     */
-    private $id;
 
 
     /**

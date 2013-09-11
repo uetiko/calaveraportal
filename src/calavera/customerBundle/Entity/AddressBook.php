@@ -6,28 +6,42 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AddressBook
+ *
+ * @ORM\Table(name="address_book")
+ * @ORM\Entity
  */
 class AddressBook
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id_address_book", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAddressBook;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="assigned_user_id", type="string", length=36, nullable=false)
      */
     private $assignedUserId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="bean", type="string", length=50, nullable=true)
      */
     private $bean;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="bean_id", type="string", length=36, nullable=false)
      */
     private $beanId;
 
-    /**
-     * @var string
-     */
-    private $idAddressBook;
 
 
     /**

@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * FoldersRel
+ *
+ * @ORM\Table(name="folders_rel")
+ * @ORM\Entity
  */
 class FoldersRel
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="folder_id", type="string", length=36, nullable=false)
      */
     private $folderId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="polymorphic_module", type="string", length=25, nullable=true)
      */
     private $polymorphicModule;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="polymorphic_id", type="string", length=36, nullable=false)
      */
     private $polymorphicId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

@@ -6,68 +6,98 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Folders
+ *
+ * @ORM\Table(name="folders")
+ * @ORM\Entity
  */
 class Folders
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=25, nullable=true)
      */
     private $name;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="folder_type", type="string", length=25, nullable=true)
      */
     private $folderType;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="parent_folder", type="string", length=36, nullable=true)
      */
     private $parentFolder;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="has_child", type="boolean", nullable=true)
      */
     private $hasChild;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="is_group", type="boolean", nullable=true)
      */
     private $isGroup;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="is_dynamic", type="boolean", nullable=true)
      */
     private $isDynamic;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="dynamic_query", type="text", nullable=true)
      */
     private $dynamicQuery;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="assign_to_id", type="string", length=36, nullable=true)
      */
     private $assignToId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=36, nullable=false)
      */
     private $createdBy;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="modified_by", type="string", length=36, nullable=false)
      */
     private $modifiedBy;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

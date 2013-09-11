@@ -6,38 +6,56 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * UsersFeeds
+ *
+ * @ORM\Table(name="users_feeds")
+ * @ORM\Entity
  */
 class UsersFeeds
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_users_feeds", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idUsersFeeds;
+
+    /**
      * @var string
+     *
+     * @ORM\Column(name="user_id", type="string", length=36, nullable=true)
      */
     private $userId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="feed_id", type="string", length=36, nullable=true)
      */
     private $feedId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="rank", type="integer", nullable=true)
      */
     private $rank;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
      */
     private $deleted;
 
-    /**
-     * @var integer
-     */
-    private $idUsersFeeds;
 
 
     /**

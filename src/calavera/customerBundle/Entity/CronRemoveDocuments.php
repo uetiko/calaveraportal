@@ -6,28 +6,42 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CronRemoveDocuments
+ *
+ * @ORM\Table(name="cron_remove_documents")
+ * @ORM\Entity
  */
 class CronRemoveDocuments
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=36, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bean_id", type="string", length=36, nullable=true)
      */
     private $beanId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="module", type="string", length=25, nullable=true)
      */
     private $module;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     private $dateModified;
 
-    /**
-     * @var string
-     */
-    private $id;
 
 
     /**

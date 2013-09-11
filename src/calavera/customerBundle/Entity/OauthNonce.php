@@ -6,23 +6,37 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * OauthNonce
+ *
+ * @ORM\Table(name="oauth_nonce")
+ * @ORM\Entity
  */
 class OauthNonce
 {
     /**
-     * @var integer
-     */
-    private $nonceTs;
-
-    /**
      * @var string
+     *
+     * @ORM\Column(name="conskey", type="string", length=32, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $conskey;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nonce", type="string", length=32, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $nonce;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nonce_ts", type="bigint", nullable=true)
+     */
+    private $nonceTs;
+
 
 
     /**
