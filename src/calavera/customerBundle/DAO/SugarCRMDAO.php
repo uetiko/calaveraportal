@@ -31,20 +31,20 @@ class SugarCRMDAO {
     }
 
     public function registraLlamadaSugar(ContactoDTO $to) {
+        
         switch ($this->creaContacto($to)) {
             case TRUE:
                 if (FALSE == $this->existsEmailSugar($to->getEmail())) {
                     try {
-                        $this->registraEmailSugar($to);
+                        $this->registraEmailAddressBean($to, $this->registraEmailSugar($to));
                     } catch (Exception $exc) {
                         
                     }
-                    try {
-                        $this->registraEmailAddressBean($to, $this->getIdEmailSugar($to->getEmail()));
-                    } catch (Exception $exc) {
-                        echo $exc->getTraceAsString();
-                    }
+                } else {
+                    $this->registraEmailAddressBean($to, $this->getIdEmailSugar($to->getEmail()));
                 }
+                $idCall = $this->createCallSugar($to);
+                $this->createCallContactSugar($to, $idCall);
                 break;
             case FALSE:
                 break;
@@ -65,11 +65,11 @@ class SugarCRMDAO {
         try {
             $this->em->persist($emailAddress);
             $this->em->flush();
-            $success = TRUE;
+//            $success = TRUE;
         } catch (Exception $exc) {
             throw new \Exception("No se pudo crear cuenta");
         }
-        return $success;
+        return $emailAddress->getId();
     }
 
     public function existsEmailSugar($email) {
@@ -123,8 +123,7 @@ class SugarCRMDAO {
      */
     public function creaContacto(ContactoDTO $to) {
         $success = FALSE;
-        $contacto = new calavera\customerBundle\Entity\Contacts();
-        $contacto->setId($to->getId());
+        $contacto = new \calavera\customerBundle\Entity\Contacts($to->getId());
         $contacto->setFirstName($to->getNombre());
         $contacto->setLastName($to->getApellido());
         $contacto->setTitle($to->getAsunto());
@@ -175,8 +174,8 @@ class SugarCRMDAO {
         }
         return $calls->getId();
     }
-    
-    public function createCallContactSugar(ContactoDTO $to, $idCall){
+
+    public function createCallContactSugar(ContactoDTO $to, $idCall) {
         $callContact = new CallsContacts(Utils::createIdSugar());
         $callContact->setCallId($idCall);
         $callContact->setContactId($to->getId());
@@ -184,6 +183,25 @@ class SugarCRMDAO {
         $callContact->setAcceptStatus('none');
         $callContact->setDateModified(Utils::getCurrentDateAndTime());
         $callContact->setDeleted(FALSE);
+        try {
+            $this->em->persist($callContact);
+            $this->em->flush();
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+    }
+
+    public function getEmails() {
+        $emailAddress = new EmailAddresses();
+        $result = array();
+        $dql = "select m from calavera\customerBundle\Entity\EmailAddresses m";
+        try {
+            $query = $this->em->createQuery($dql);
+            $result = $query->getResult();
+        } catch (\Doctrine\ORM\NoResultException $exc) {
+            echo $exc->getTraceAsString();
+        }
+        return $result;
     }
 
 }

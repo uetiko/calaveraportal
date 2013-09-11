@@ -26,19 +26,25 @@ class ContactoDAO {
     }
 
     public function registraContacto(ContactoDTO $to) {
-        $contacto = new Contacto();
-        $contacto->setIdContact($to->getId());
+        $contacto = new Contacto($to->getId());
         $contacto->setNombre($to->getNombre());
         $contacto->setApellido($to->getApellido());
         $contacto->setTelefono($to->getTelefono());
         $contacto->setAsunto($to->getAsunto());
         $contacto->setMensaje($to->getMensaje());
+        $contacto;
         try {
             $this->em->persist($contacto);
             $this->em->flush();
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+        } catch (ORMInvalidArgumentException $exc) {
+            echo '<pre>'; print_r($exc->getTraceAsString());
+        } catch (\Doctrine\ORM\ORMException $exc){
+            echo '<pre>'; print_r($exc->getTraceAsString());
+            echo '<pre>'; print_r($exc->getTrace());
+        } catch (Exception $e){
+            echo '<pre>'; print_r($e->getTraceAsString());
         }
+        //return $contacto->getIdContact();
     }
 }
 

@@ -24,9 +24,19 @@ class ContactoBO {
      * @param \calavera\customerBundle\DTO\ContactoDTO $to
      */
     public function registerContact(ContactoDTO $to){
-        $to->setId(Utils::createIdSugar());
         $this->daoCalavera->registraContacto($to);
+        $this->daoSugar->registraLlamadaSugar($to);
         
+    }
+    
+    public function getEmails(){
+        return $this->daoSugar->getEmails();
+    }
+    
+    private function CreateSwiftMessageForContactoForm(ContactoDTO $to){
+        $message = \Swift_Message::newInstance('Tiene una nueva llamada creada en sugarCRM');
+        $message->setFrom($to->getEmail(), $to->getApellido() . ' ' . $to->getNombre());
+        return $message;
     }
 }
 

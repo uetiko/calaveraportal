@@ -1,11 +1,14 @@
 <?php
+
 namespace calavera\customerBundle\DTO;
+
 /**
  * Description of ContactoDTO
  *
  * @author Angel Barrientos Cruz <uetiko@gmail.com>
  */
 class ContactoDTO {
+
     private $id = NULL;
     private $nombre = NULL;
     private $apellido = NULL;
@@ -13,7 +16,11 @@ class ContactoDTO {
     private $email = NULL;
     private $asunto = NULL;
     private $mensaje = NULL;
-    
+
+    public function __construct($id) {
+        $this->id = $id;
+    }
+
     public function getApellido() {
         return $this->apellido;
     }
@@ -29,7 +36,7 @@ class ContactoDTO {
     public function setId($id) {
         $this->id = $id;
     }
-        
+
     public function getNombre() {
         return $this->nombre;
     }
@@ -69,6 +76,7 @@ class ContactoDTO {
     public function setMensaje($mensaje) {
         $this->mensaje = $mensaje;
     }
+
 }
 
 ?>

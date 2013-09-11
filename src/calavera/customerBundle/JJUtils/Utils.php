@@ -5,19 +5,28 @@ namespace calavera\customerBundle\JJUtils;
 /**
  * Description of Utils
  *
- * @author silent
+ * @author Angel Barrientos <uetiko@gmail.com>
  */
 class Utils {
-
+    /**
+     * Creates an id similar to sugarCRM
+     * @return String
+     */
     static final public function createIdSugar() {
         $hash = sha1(date('dmYHis') . rand(10000, 99999));
-        return substr($hash, 0, 8) . '-' . substr($hash, 9, 4) . '-' . substr($hash, 14, 4) . '-' . substr($hash, 19, 4) . '-' . substr($hash, 24, 4) . '.' . substr($hash, 29, 12);
+        return substr($hash, 0, 8) . '-' . substr($hash, 9, 4) . '-' . substr($hash, 14, 4) . '-' . substr($hash, 19, 4) . '-' . substr($hash, 24, 12);
     }
-
+    /**
+     * return a DateTime Object with current time
+     * @return \DateTime
+     */
     static final public function getCurrentDateAndTime() {
-        return date('d-m-Y H:i:s');
+        return new \DateTime(date('d-m-Y H:i:s'));
     }
-
+    /**
+     * calculate the date start call for sugarCRM
+     * @return \DateTime
+     */
     static final public function calculateCallDateStart() {
         $day = NULL;
         switch (TRUE) {
@@ -32,7 +41,7 @@ class Utils {
                 $day = $day = date('d-m-Y H:i:s', time()+1800);
                 break;
         }
-        return $day;
+        return new \DateTime($day);
     }
     
     static final public function calculateCallDateEnd() {
@@ -49,9 +58,6 @@ class Utils {
                 $day = $day = date('d-m-Y H:i:s', time()+2700);
                 break;
         }
-        return $day;
+        return new \DateTime($day);
     }
-
 }
-
-?>
