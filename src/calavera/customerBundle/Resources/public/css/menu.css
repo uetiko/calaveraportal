@@ -44,6 +44,8 @@ menu{
     font:bold;
     padding:10px;
     float: left;
+    position: relative;
+    z-index: 2;
 }
 menu:hover{
     background:-moz-linear-gradient(#FFF 0%, #C4C4C4 100%);

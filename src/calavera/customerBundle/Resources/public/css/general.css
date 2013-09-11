@@ -8,10 +8,14 @@
 
 #container {
     float: left;
-    padding-left: 30px;
+    padding-left: 180px;
     margin-top: 40px;
     margin-bottom: 50px;
     width: 850px;
+    z-index: 1;
+    position: absolute;
+    background-size: cover;
+    height: 100%;  
 }
 
 #header-general {
@@ -24,6 +28,7 @@
     position: relative;
     margin: 30px;
     padding: 50px;
+    z-index: 1;
 }
 
 .footer-social-network {

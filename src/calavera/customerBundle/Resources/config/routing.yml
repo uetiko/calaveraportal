@@ -21,6 +21,10 @@ _contacto:
 _contactoRegistro:
   pattern: /contacto/send
   defaults: { _controller: calaveracustomerBundle:Contacto:sendRegister }
+
+_contactoEmails:
+  pattern: /contacto/getEmails
+  defaults: { _controller: calaveracustomerBundle:Contacto:getEmails }
   
 _soluciones:
   pattern: /soluciones
