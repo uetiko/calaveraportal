@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="OutboundEmail" table="outbound_email">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="true"/>
+    <field name="type" type="string" column="type" length="15" nullable="true"/>
+    <field name="userId" type="string" column="user_id" length="36" nullable="false"/>
+    <field name="mailSendtype" type="string" column="mail_sendtype" length="8" nullable="true"/>
+    <field name="mailSmtptype" type="string" column="mail_smtptype" length="20" nullable="true"/>
+    <field name="mailSmtpserver" type="string" column="mail_smtpserver" length="100" nullable="true"/>
+    <field name="mailSmtpport" type="integer" column="mail_smtpport" nullable="true"/>
+    <field name="mailSmtpuser" type="string" column="mail_smtpuser" length="100" nullable="true"/>
+    <field name="mailSmtppass" type="string" column="mail_smtppass" length="100" nullable="true"/>
+    <field name="mailSmtpauthReq" type="boolean" column="mail_smtpauth_req" nullable="true"/>
+    <field name="mailSmtpssl" type="integer" column="mail_smtpssl" nullable="true"/>
+  </entity>
+</doctrine-mapping>

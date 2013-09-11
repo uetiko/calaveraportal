@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Usuario" table="usuario">
+    <id name="idUsuario" type="integer" column="id_usuario">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="45" nullable="false"/>
+    <field name="apellido" type="string" column="apellido" length="45" nullable="false"/>
+    <field name="correo" type="string" column="correo" length="255" nullable="false"/>
+    <field name="username" type="string" column="username" length="45" nullable="true"/>
+    <field name="address" type="string" column="address" length="200" nullable="true"/>
+    <field name="telefono" type="string" column="telefono" length="45" nullable="true"/>
+    <field name="celular" type="string" column="celular" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Config" table="config">
+    <id name="idConfig" type="integer" column="id_config">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="category" type="string" column="category" length="32" nullable="true"/>
+    <field name="name" type="string" column="name" length="32" nullable="true"/>
+    <field name="value" type="text" column="value" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AclRoles" table="acl_roles">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateEntered" type="datetime" column="date_entered" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="modifiedUserId" type="string" column="modified_user_id" length="36" nullable="true"/>
+    <field name="createdBy" type="string" column="created_by" length="36" nullable="true"/>
+    <field name="name" type="string" column="name" length="150" nullable="true"/>
+    <field name="description" type="text" column="description" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+  </entity>
+</doctrine-mapping>

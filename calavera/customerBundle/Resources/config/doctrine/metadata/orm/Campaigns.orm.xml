@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Campaigns" table="campaigns">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="true"/>
+    <field name="dateEntered" type="datetime" column="date_entered" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="modifiedUserId" type="string" column="modified_user_id" length="36" nullable="true"/>
+    <field name="createdBy" type="string" column="created_by" length="36" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+    <field name="assignedUserId" type="string" column="assigned_user_id" length="36" nullable="true"/>
+    <field name="trackerKey" type="integer" column="tracker_key" nullable="false"/>
+    <field name="trackerCount" type="integer" column="tracker_count" nullable="true"/>
+    <field name="referUrl" type="string" column="refer_url" length="255" nullable="true"/>
+    <field name="trackerText" type="string" column="tracker_text" length="255" nullable="true"/>
+    <field name="startDate" type="date" column="start_date" nullable="true"/>
+    <field name="endDate" type="date" column="end_date" nullable="true"/>
+    <field name="status" type="string" column="status" length="100" nullable="true"/>
+    <field name="impressions" type="integer" column="impressions" nullable="true"/>
+    <field name="currencyId" type="string" column="currency_id" length="36" nullable="true"/>
+    <field name="budget" type="float" column="budget" nullable="true"/>
+    <field name="expectedCost" type="float" column="expected_cost" nullable="true"/>
+    <field name="actualCost" type="float" column="actual_cost" nullable="true"/>
+    <field name="expectedRevenue" type="float" column="expected_revenue" nullable="true"/>
+    <field name="campaignType" type="string" column="campaign_type" length="100" nullable="true"/>
+    <field name="objective" type="text" column="objective" nullable="true"/>
+    <field name="content" type="text" column="content" nullable="true"/>
+    <field name="frequency" type="string" column="frequency" length="100" nullable="true"/>
+  </entity>
+</doctrine-mapping>
