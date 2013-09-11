@@ -1,0 +1,9 @@
+{% extends 'calaveracustomerBundle::templateMail.html.twig'%}
+{% block title%}Nuevo contacto{% endblock%}
+{% block header %}<h2>Nueva llamada greada en sugarCRM</h2>{% endblock%}
+{% block section %}
+Se ha creado una nueva llamada y contacto para {{ nombre}} con el asunto: {{ asunto }}.
+{% endblock %}
+{% block footer %}
+Este Correo es
+{% endblock %}

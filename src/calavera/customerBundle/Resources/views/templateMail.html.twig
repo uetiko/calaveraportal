@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Contacto{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <header >
+            {% block header %}{% endblock%}
+        </header>
+        <article style="margin-bottom: 16px; width: 752px; border-radius: 6px; padding: 0; border: 1px solid #CCC;">
+            <section>
+                {% block section %}{% endblock %}
+                {% block javascripts %}{% endblock %}
+
+            </section>
+        </article>
+        <footer style="margin-bottom: 16px; width: 752px; border-radius: 6px; padding: 0; border: 1px solid #CCC;">
+            {% block footer %}{% endblock %}
+        </footer>
+    </body>
+</html>
