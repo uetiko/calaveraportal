@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="newsletter_subscription")
  * @ORM\Entity
  */
-class NewsletterSubscription {
-
+class NewsletterSubscription
+{
     /**
      * @var integer
      *
@@ -43,16 +43,6 @@ class NewsletterSubscription {
     private $gener;
 
     /**
-     * @var \Usuario
-     *
-     * @ORM\ManyToOne(targetEntity="Usuario")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_usuario")
-     * })
-     */
-    private $idUser;
-
-    /**
      * @var \CatNewsletterStatus
      *
      * @ORM\ManyToOne(targetEntity="CatNewsletterStatus")
@@ -63,13 +53,16 @@ class NewsletterSubscription {
     private $idNewsletterStatus;
 
     /**
-     * Get idNewsletterSubscription
+     * @var \Usuario
      *
-     * @return integer 
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_usuario")
+     * })
      */
-    public function getIdNewsletterSubscription() {
-        return $this->idNewsletterSubscription;
-    }
+    private $idUser;
+
+
 
     /**
      * Set email
@@ -77,9 +70,10 @@ class NewsletterSubscription {
      * @param string $email
      * @return NewsletterSubscription
      */
-    public function setEmail($email) {
+    public function setEmail($email)
+    {
         $this->email = $email;
-
+    
         return $this;
     }
 
@@ -88,7 +82,8 @@ class NewsletterSubscription {
      *
      * @return string 
      */
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
 
@@ -98,9 +93,10 @@ class NewsletterSubscription {
      * @param \DateTime $createdAt
      * @return NewsletterSubscription
      */
-    public function setCreatedAt($createdAt) {
+    public function setCreatedAt($createdAt)
+    {
         $this->createdAt = $createdAt;
-
+    
         return $this;
     }
 
@@ -109,7 +105,8 @@ class NewsletterSubscription {
      *
      * @return \DateTime 
      */
-    public function getCreatedAt() {
+    public function getCreatedAt()
+    {
         return $this->createdAt;
     }
 
@@ -119,9 +116,10 @@ class NewsletterSubscription {
      * @param string $gener
      * @return NewsletterSubscription
      */
-    public function setGener($gener) {
+    public function setGener($gener)
+    {
         $this->gener = $gener;
-
+    
         return $this;
     }
 
@@ -130,8 +128,19 @@ class NewsletterSubscription {
      *
      * @return string 
      */
-    public function getGener() {
+    public function getGener()
+    {
         return $this->gener;
+    }
+
+    /**
+     * Get idNewsletterSubscription
+     *
+     * @return integer 
+     */
+    public function getIdNewsletterSubscription()
+    {
+        return $this->idNewsletterSubscription;
     }
 
     /**
@@ -140,9 +149,10 @@ class NewsletterSubscription {
      * @param \calavera\customerBundle\Entity\Usuario $idUser
      * @return NewsletterSubscription
      */
-    public function setIdUser(\calavera\customerBundle\Entity\Usuario $idUser = null) {
+    public function setIdUser(\calavera\customerBundle\Entity\Usuario $idUser = null)
+    {
         $this->idUser = $idUser;
-
+    
         return $this;
     }
 
@@ -151,7 +161,8 @@ class NewsletterSubscription {
      *
      * @return \calavera\customerBundle\Entity\Usuario 
      */
-    public function getIdUser() {
+    public function getIdUser()
+    {
         return $this->idUser;
     }
 
@@ -161,9 +172,10 @@ class NewsletterSubscription {
      * @param \calavera\customerBundle\Entity\CatNewsletterStatus $idNewsletterStatus
      * @return NewsletterSubscription
      */
-    public function setIdNewsletterStatus(\calavera\customerBundle\Entity\CatNewsletterStatus $idNewsletterStatus = null) {
+    public function setIdNewsletterStatus(\calavera\customerBundle\Entity\CatNewsletterStatus $idNewsletterStatus = null)
+    {
         $this->idNewsletterStatus = $idNewsletterStatus;
-
+    
         return $this;
     }
 
@@ -172,8 +184,8 @@ class NewsletterSubscription {
      *
      * @return \calavera\customerBundle\Entity\CatNewsletterStatus 
      */
-    public function getIdNewsletterStatus() {
+    public function getIdNewsletterStatus()
+    {
         return $this->idNewsletterStatus;
     }
-
 }

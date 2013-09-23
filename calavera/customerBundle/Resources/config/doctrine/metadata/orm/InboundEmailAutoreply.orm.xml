@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="InboundEmailAutoreply" table="inbound_email_autoreply">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+    <field name="dateEntered" type="datetime" column="date_entered" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="autorepliedTo" type="string" column="autoreplied_to" length="100" nullable="true"/>
+    <field name="ieId" type="string" column="ie_id" length="36" nullable="false"/>
+  </entity>
+</doctrine-mapping>

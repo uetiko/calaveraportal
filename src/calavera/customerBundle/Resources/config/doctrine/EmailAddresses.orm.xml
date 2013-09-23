@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\EmailAddresses" table="email_addresses">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="NONE"/>
+    </id>
+    <field name="emailAddress" type="string" column="email_address" length="255" nullable="true"/>
+    <field name="emailAddressCaps" type="string" column="email_address_caps" length="255" nullable="true"/>
+    <field name="invalidEmail" type="boolean" column="invalid_email" nullable="true"/>
+    <field name="optOut" type="boolean" column="opt_out" nullable="true"/>
+    <field name="dateCreated" type="datetime" column="date_created" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="usuario")
  * @ORM\Entity
  */
-class Usuario {
-
+class Usuario
+{
     /**
      * @var integer
      *
@@ -70,14 +70,7 @@ class Usuario {
      */
     private $celular;
 
-    /**
-     * Get idUsuario
-     *
-     * @return integer 
-     */
-    public function getIdUsuario() {
-        return $this->idUsuario;
-    }
+
 
     /**
      * Set nombre
@@ -85,9 +78,10 @@ class Usuario {
      * @param string $nombre
      * @return Usuario
      */
-    public function setNombre($nombre) {
+    public function setNombre($nombre)
+    {
         $this->nombre = $nombre;
-
+    
         return $this;
     }
 
@@ -96,7 +90,8 @@ class Usuario {
      *
      * @return string 
      */
-    public function getNombre() {
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
@@ -106,9 +101,10 @@ class Usuario {
      * @param string $apellido
      * @return Usuario
      */
-    public function setApellido($apellido) {
+    public function setApellido($apellido)
+    {
         $this->apellido = $apellido;
-
+    
         return $this;
     }
 
@@ -117,7 +113,8 @@ class Usuario {
      *
      * @return string 
      */
-    public function getApellido() {
+    public function getApellido()
+    {
         return $this->apellido;
     }
 
@@ -127,9 +124,10 @@ class Usuario {
      * @param string $correo
      * @return Usuario
      */
-    public function setCorreo($correo) {
+    public function setCorreo($correo)
+    {
         $this->correo = $correo;
-
+    
         return $this;
     }
 
@@ -138,7 +136,8 @@ class Usuario {
      *
      * @return string 
      */
-    public function getCorreo() {
+    public function getCorreo()
+    {
         return $this->correo;
     }
 
@@ -148,9 +147,10 @@ class Usuario {
      * @param string $username
      * @return Usuario
      */
-    public function setUsername($username) {
+    public function setUsername($username)
+    {
         $this->username = $username;
-
+    
         return $this;
     }
 
@@ -159,7 +159,8 @@ class Usuario {
      *
      * @return string 
      */
-    public function getUsername() {
+    public function getUsername()
+    {
         return $this->username;
     }
 
@@ -169,9 +170,10 @@ class Usuario {
      * @param string $address
      * @return Usuario
      */
-    public function setAddress($address) {
+    public function setAddress($address)
+    {
         $this->address = $address;
-
+    
         return $this;
     }
 
@@ -180,7 +182,8 @@ class Usuario {
      *
      * @return string 
      */
-    public function getAddress() {
+    public function getAddress()
+    {
         return $this->address;
     }
 
@@ -190,9 +193,10 @@ class Usuario {
      * @param string $telefono
      * @return Usuario
      */
-    public function setTelefono($telefono) {
+    public function setTelefono($telefono)
+    {
         $this->telefono = $telefono;
-
+    
         return $this;
     }
 
@@ -201,7 +205,8 @@ class Usuario {
      *
      * @return string 
      */
-    public function getTelefono() {
+    public function getTelefono()
+    {
         return $this->telefono;
     }
 
@@ -211,9 +216,10 @@ class Usuario {
      * @param string $celular
      * @return Usuario
      */
-    public function setCelular($celular) {
+    public function setCelular($celular)
+    {
         $this->celular = $celular;
-
+    
         return $this;
     }
 
@@ -222,8 +228,18 @@ class Usuario {
      *
      * @return string 
      */
-    public function getCelular() {
+    public function getCelular()
+    {
         return $this->celular;
     }
 
+    /**
+     * Get idUsuario
+     *
+     * @return integer 
+     */
+    public function getIdUsuario()
+    {
+        return $this->idUsuario;
+    }
 }

@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="acl_entries")
  * @ORM\Entity
  */
-class AclEntries {
-
+class AclEntries
+{
     /**
      * @var integer
      *
@@ -100,14 +100,7 @@ class AclEntries {
      */
     private $class;
 
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId() {
-        return $this->id;
-    }
+
 
     /**
      * Set fieldName
@@ -115,9 +108,10 @@ class AclEntries {
      * @param string $fieldName
      * @return AclEntries
      */
-    public function setFieldName($fieldName) {
+    public function setFieldName($fieldName)
+    {
         $this->fieldName = $fieldName;
-
+    
         return $this;
     }
 
@@ -126,7 +120,8 @@ class AclEntries {
      *
      * @return string 
      */
-    public function getFieldName() {
+    public function getFieldName()
+    {
         return $this->fieldName;
     }
 
@@ -136,9 +131,10 @@ class AclEntries {
      * @param integer $aceOrder
      * @return AclEntries
      */
-    public function setAceOrder($aceOrder) {
+    public function setAceOrder($aceOrder)
+    {
         $this->aceOrder = $aceOrder;
-
+    
         return $this;
     }
 
@@ -147,7 +143,8 @@ class AclEntries {
      *
      * @return integer 
      */
-    public function getAceOrder() {
+    public function getAceOrder()
+    {
         return $this->aceOrder;
     }
 
@@ -157,9 +154,10 @@ class AclEntries {
      * @param integer $mask
      * @return AclEntries
      */
-    public function setMask($mask) {
+    public function setMask($mask)
+    {
         $this->mask = $mask;
-
+    
         return $this;
     }
 
@@ -168,7 +166,8 @@ class AclEntries {
      *
      * @return integer 
      */
-    public function getMask() {
+    public function getMask()
+    {
         return $this->mask;
     }
 
@@ -178,9 +177,10 @@ class AclEntries {
      * @param boolean $granting
      * @return AclEntries
      */
-    public function setGranting($granting) {
+    public function setGranting($granting)
+    {
         $this->granting = $granting;
-
+    
         return $this;
     }
 
@@ -189,7 +189,8 @@ class AclEntries {
      *
      * @return boolean 
      */
-    public function getGranting() {
+    public function getGranting()
+    {
         return $this->granting;
     }
 
@@ -199,9 +200,10 @@ class AclEntries {
      * @param string $grantingStrategy
      * @return AclEntries
      */
-    public function setGrantingStrategy($grantingStrategy) {
+    public function setGrantingStrategy($grantingStrategy)
+    {
         $this->grantingStrategy = $grantingStrategy;
-
+    
         return $this;
     }
 
@@ -210,7 +212,8 @@ class AclEntries {
      *
      * @return string 
      */
-    public function getGrantingStrategy() {
+    public function getGrantingStrategy()
+    {
         return $this->grantingStrategy;
     }
 
@@ -220,9 +223,10 @@ class AclEntries {
      * @param boolean $auditSuccess
      * @return AclEntries
      */
-    public function setAuditSuccess($auditSuccess) {
+    public function setAuditSuccess($auditSuccess)
+    {
         $this->auditSuccess = $auditSuccess;
-
+    
         return $this;
     }
 
@@ -231,7 +235,8 @@ class AclEntries {
      *
      * @return boolean 
      */
-    public function getAuditSuccess() {
+    public function getAuditSuccess()
+    {
         return $this->auditSuccess;
     }
 
@@ -241,9 +246,10 @@ class AclEntries {
      * @param boolean $auditFailure
      * @return AclEntries
      */
-    public function setAuditFailure($auditFailure) {
+    public function setAuditFailure($auditFailure)
+    {
         $this->auditFailure = $auditFailure;
-
+    
         return $this;
     }
 
@@ -252,50 +258,19 @@ class AclEntries {
      *
      * @return boolean 
      */
-    public function getAuditFailure() {
+    public function getAuditFailure()
+    {
         return $this->auditFailure;
     }
 
     /**
-     * Set objectentity
+     * Get id
      *
-     * @param \calavera\customerBundle\Entity\AclObjectIdentities $objectentity
-     * @return AclEntries
+     * @return integer 
      */
-    public function setObjectentity(\calavera\customerBundle\Entity\AclObjectIdentities $objectentity = null) {
-        $this->objectentity = $objectentity;
-
-        return $this;
-    }
-
-    /**
-     * Get objectentity
-     *
-     * @return \calavera\customerBundle\Entity\AclObjectIdentities 
-     */
-    public function getObjectentity() {
-        return $this->objectentity;
-    }
-
-    /**
-     * Set securityentity
-     *
-     * @param \calavera\customerBundle\Entity\AclSecurityIdentities $securityentity
-     * @return AclEntries
-     */
-    public function setSecurityentity(\calavera\customerBundle\Entity\AclSecurityIdentities $securityentity = null) {
-        $this->securityentity = $securityentity;
-
-        return $this;
-    }
-
-    /**
-     * Get securityentity
-     *
-     * @return \calavera\customerBundle\Entity\AclSecurityIdentities 
-     */
-    public function getSecurityentity() {
-        return $this->securityentity;
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -304,9 +279,10 @@ class AclEntries {
      * @param \calavera\customerBundle\Entity\AclClasses $class
      * @return AclEntries
      */
-    public function setClass(\calavera\customerBundle\Entity\AclClasses $class = null) {
+    public function setClass(\calavera\customerBundle\Entity\AclClasses $class = null)
+    {
         $this->class = $class;
-
+    
         return $this;
     }
 
@@ -315,8 +291,54 @@ class AclEntries {
      *
      * @return \calavera\customerBundle\Entity\AclClasses 
      */
-    public function getClass() {
+    public function getClass()
+    {
         return $this->class;
     }
 
+    /**
+     * Set securityentity
+     *
+     * @param \calavera\customerBundle\Entity\AclSecurityIdentities $securityentity
+     * @return AclEntries
+     */
+    public function setSecurityentity(\calavera\customerBundle\Entity\AclSecurityIdentities $securityentity = null)
+    {
+        $this->securityentity = $securityentity;
+    
+        return $this;
+    }
+
+    /**
+     * Get securityentity
+     *
+     * @return \calavera\customerBundle\Entity\AclSecurityIdentities 
+     */
+    public function getSecurityentity()
+    {
+        return $this->securityentity;
+    }
+
+    /**
+     * Set objectentity
+     *
+     * @param \calavera\customerBundle\Entity\AclObjectIdentities $objectentity
+     * @return AclEntries
+     */
+    public function setObjectentity(\calavera\customerBundle\Entity\AclObjectIdentities $objectentity = null)
+    {
+        $this->objectentity = $objectentity;
+    
+        return $this;
+    }
+
+    /**
+     * Get objectentity
+     *
+     * @return \calavera\customerBundle\Entity\AclObjectIdentities 
+     */
+    public function getObjectentity()
+    {
+        return $this->objectentity;
+    }
 }

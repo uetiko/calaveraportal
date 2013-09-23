@@ -1,0 +1,18 @@
+CatGender:
+    type: entity
+    table: cat_gender
+    fields:
+        idGender:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: id_gender
+            generator:
+                strategy: IDENTITY
+        gender:
+            type: string
+            length: 15
+            fixed: false
+            nullable: false
+    lifecycleCallbacks: {  }

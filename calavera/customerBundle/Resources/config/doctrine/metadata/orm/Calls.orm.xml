@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Calls" table="calls">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="true"/>
+    <field name="dateEntered" type="datetime" column="date_entered" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="modifiedUserId" type="string" column="modified_user_id" length="36" nullable="true"/>
+    <field name="createdBy" type="string" column="created_by" length="36" nullable="true"/>
+    <field name="description" type="text" column="description" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+    <field name="assignedUserId" type="string" column="assigned_user_id" length="36" nullable="true"/>
+    <field name="durationHours" type="integer" column="duration_hours" nullable="true"/>
+    <field name="durationMinutes" type="integer" column="duration_minutes" nullable="true"/>
+    <field name="dateStart" type="datetime" column="date_start" nullable="true"/>
+    <field name="dateEnd" type="datetime" column="date_end" nullable="true"/>
+    <field name="parentType" type="string" column="parent_type" length="255" nullable="true"/>
+    <field name="status" type="string" column="status" length="100" nullable="true"/>
+    <field name="direction" type="string" column="direction" length="100" nullable="true"/>
+    <field name="parentId" type="string" column="parent_id" length="36" nullable="true"/>
+    <field name="reminderTime" type="integer" column="reminder_time" nullable="true"/>
+    <field name="emailReminderTime" type="integer" column="email_reminder_time" nullable="true"/>
+    <field name="emailReminderSent" type="boolean" column="email_reminder_sent" nullable="true"/>
+    <field name="outlookId" type="string" column="outlook_id" length="255" nullable="true"/>
+    <field name="repeatType" type="string" column="repeat_type" length="36" nullable="true"/>
+    <field name="repeatInterval" type="integer" column="repeat_interval" nullable="true"/>
+    <field name="repeatDow" type="string" column="repeat_dow" length="7" nullable="true"/>
+    <field name="repeatUntil" type="date" column="repeat_until" nullable="true"/>
+    <field name="repeatCount" type="integer" column="repeat_count" nullable="true"/>
+    <field name="repeatParentId" type="string" column="repeat_parent_id" length="36" nullable="true"/>
+    <field name="recurringSource" type="string" column="recurring_source" length="36" nullable="true"/>
+  </entity>
+</doctrine-mapping>

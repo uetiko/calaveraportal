@@ -1,0 +1,54 @@
+/* 
+    Document   : general
+    Created on : Aug 30, 2013, 9:19:02 PM
+    Author     : Angel Barrientos <uetiko@gmail.com>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#container {
+    float: left;
+    padding-left: 180px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 850px;
+    z-index: 1;
+    position: absolute;
+    background-size: cover;
+    height: 100%;  
+}
+
+#header-general {
+    text-align: center;
+}
+
+#footer {
+    float: left;
+    width: 90%;
+    position: relative;
+    margin: 30px;
+    padding: 50px;
+    z-index: 1;
+}
+
+.footer-social-network {
+    float: right;
+    margin: 50px;
+}
+
+.footer-social-network a {
+    padding: 8px;
+    margin: 3px;
+}
+
+.newsletter {
+    /*background-image: url('/bundles/calaveracustomer/images/icons/footer/newsletter_footer.png');*/
+    float: left;
+    padding: 33px;
+}
+
+.calavera-address {
+    width: 400px;
+    float: left;
+    margin: 0px;
+}

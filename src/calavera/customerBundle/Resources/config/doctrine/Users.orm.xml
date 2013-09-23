@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\Users" table="users">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userName" type="string" column="user_name" length="60" nullable="true"/>
+    <field name="userHash" type="string" column="user_hash" length="255" nullable="true"/>
+    <field name="systemGeneratedPassword" type="boolean" column="system_generated_password" nullable="true"/>
+    <field name="pwdLastChanged" type="datetime" column="pwd_last_changed" nullable="true"/>
+    <field name="authenticateId" type="string" column="authenticate_id" length="100" nullable="true"/>
+    <field name="sugarLogin" type="boolean" column="sugar_login" nullable="true"/>
+    <field name="firstName" type="string" column="first_name" length="30" nullable="true"/>
+    <field name="lastName" type="string" column="last_name" length="30" nullable="true"/>
+    <field name="isAdmin" type="boolean" column="is_admin" nullable="true"/>
+    <field name="externalAuthOnly" type="boolean" column="external_auth_only" nullable="true"/>
+    <field name="receiveNotifications" type="boolean" column="receive_notifications" nullable="true"/>
+    <field name="description" type="text" column="description" nullable="true"/>
+    <field name="dateEntered" type="datetime" column="date_entered" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="modifiedUserId" type="string" column="modified_user_id" length="36" nullable="true"/>
+    <field name="createdBy" type="string" column="created_by" length="36" nullable="true"/>
+    <field name="title" type="string" column="title" length="50" nullable="true"/>
+    <field name="department" type="string" column="department" length="50" nullable="true"/>
+    <field name="phoneHome" type="string" column="phone_home" length="50" nullable="true"/>
+    <field name="phoneMobile" type="string" column="phone_mobile" length="50" nullable="true"/>
+    <field name="phoneWork" type="string" column="phone_work" length="50" nullable="true"/>
+    <field name="phoneOther" type="string" column="phone_other" length="50" nullable="true"/>
+    <field name="phoneFax" type="string" column="phone_fax" length="50" nullable="true"/>
+    <field name="status" type="string" column="status" length="100" nullable="true"/>
+    <field name="addressStreet" type="string" column="address_street" length="150" nullable="true"/>
+    <field name="addressCity" type="string" column="address_city" length="100" nullable="true"/>
+    <field name="addressState" type="string" column="address_state" length="100" nullable="true"/>
+    <field name="addressCountry" type="string" column="address_country" length="100" nullable="true"/>
+    <field name="addressPostalcode" type="string" column="address_postalcode" length="20" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+    <field name="portalOnly" type="boolean" column="portal_only" nullable="true"/>
+    <field name="showOnEmployees" type="boolean" column="show_on_employees" nullable="true"/>
+    <field name="employeeStatus" type="string" column="employee_status" length="100" nullable="true"/>
+    <field name="messengerId" type="string" column="messenger_id" length="100" nullable="true"/>
+    <field name="messengerType" type="string" column="messenger_type" length="100" nullable="true"/>
+    <field name="reportsToId" type="string" column="reports_to_id" length="36" nullable="true"/>
+    <field name="isGroup" type="boolean" column="is_group" nullable="true"/>
+  </entity>
+</doctrine-mapping>

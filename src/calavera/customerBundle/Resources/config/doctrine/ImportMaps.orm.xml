@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\ImportMaps" table="import_maps">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="254" nullable="true"/>
+    <field name="source" type="string" column="source" length="36" nullable="true"/>
+    <field name="enclosure" type="string" column="enclosure" length="1" nullable="true"/>
+    <field name="delimiter" type="string" column="delimiter" length="1" nullable="true"/>
+    <field name="module" type="string" column="module" length="36" nullable="true"/>
+    <field name="content" type="text" column="content" nullable="true"/>
+    <field name="defaultValues" type="text" column="default_values" nullable="true"/>
+    <field name="hasHeader" type="boolean" column="has_header" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+    <field name="dateEntered" type="datetime" column="date_entered" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="assignedUserId" type="string" column="assigned_user_id" length="36" nullable="true"/>
+    <field name="isPublished" type="string" column="is_published" length="3" nullable="true"/>
+  </entity>
+</doctrine-mapping>

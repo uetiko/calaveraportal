@@ -1,0 +1,18 @@
+CatNewsletterStatus:
+    type: entity
+    table: cat_newsletter_status
+    fields:
+        idNewsletterStatus:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: id_newsletter_status
+            generator:
+                strategy: IDENTITY
+        status:
+            type: string
+            length: 45
+            fixed: false
+            nullable: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Opportunities" table="opportunities">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="true"/>
+    <field name="dateEntered" type="datetime" column="date_entered" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="modifiedUserId" type="string" column="modified_user_id" length="36" nullable="true"/>
+    <field name="createdBy" type="string" column="created_by" length="36" nullable="true"/>
+    <field name="description" type="text" column="description" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+    <field name="assignedUserId" type="string" column="assigned_user_id" length="36" nullable="true"/>
+    <field name="opportunityType" type="string" column="opportunity_type" length="255" nullable="true"/>
+    <field name="campaignId" type="string" column="campaign_id" length="36" nullable="true"/>
+    <field name="leadSource" type="string" column="lead_source" length="50" nullable="true"/>
+    <field name="amount" type="float" column="amount" nullable="true"/>
+    <field name="amountUsdollar" type="float" column="amount_usdollar" nullable="true"/>
+    <field name="currencyId" type="string" column="currency_id" length="36" nullable="true"/>
+    <field name="dateClosed" type="date" column="date_closed" nullable="true"/>
+    <field name="nextStep" type="string" column="next_step" length="100" nullable="true"/>
+    <field name="salesStage" type="string" column="sales_stage" length="255" nullable="true"/>
+    <field name="probability" type="float" column="probability" nullable="true"/>
+  </entity>
+</doctrine-mapping>

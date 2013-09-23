@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EmailsBeans" table="emails_beans">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="emailId" type="string" column="email_id" length="36" nullable="true"/>
+    <field name="beanId" type="string" column="bean_id" length="36" nullable="true"/>
+    <field name="beanModule" type="string" column="bean_module" length="100" nullable="true"/>
+    <field name="campaignData" type="text" column="campaign_data" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+  </entity>
+</doctrine-mapping>

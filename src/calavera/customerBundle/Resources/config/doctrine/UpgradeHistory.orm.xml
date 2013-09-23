@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="calavera\customerBundle\Entity\UpgradeHistory" table="upgrade_history">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="filename" type="string" column="filename" length="255" nullable="true"/>
+    <field name="md5sum" type="string" column="md5sum" length="32" nullable="true"/>
+    <field name="type" type="string" column="type" length="30" nullable="true"/>
+    <field name="status" type="string" column="status" length="50" nullable="true"/>
+    <field name="version" type="string" column="version" length="64" nullable="true"/>
+    <field name="name" type="string" column="name" length="255" nullable="true"/>
+    <field name="description" type="text" column="description" nullable="true"/>
+    <field name="idName" type="string" column="id_name" length="255" nullable="true"/>
+    <field name="manifest" type="text" column="manifest" nullable="true"/>
+    <field name="dateEntered" type="datetime" column="date_entered" nullable="true"/>
+    <field name="enabled" type="boolean" column="enabled" nullable="true"/>
+  </entity>
+</doctrine-mapping>

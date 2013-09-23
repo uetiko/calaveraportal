@@ -1,0 +1,48 @@
+Usuario:
+    type: entity
+    table: usuario
+    fields:
+        idUsuario:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: id_usuario
+            generator:
+                strategy: IDENTITY
+        nombre:
+            type: string
+            length: 45
+            fixed: false
+            nullable: false
+        apellido:
+            type: string
+            length: 45
+            fixed: false
+            nullable: false
+        correo:
+            type: string
+            length: 255
+            fixed: false
+            nullable: false
+        username:
+            type: string
+            length: 45
+            fixed: false
+            nullable: true
+        address:
+            type: string
+            length: 200
+            fixed: false
+            nullable: true
+        telefono:
+            type: string
+            length: 45
+            fixed: false
+            nullable: true
+        celular:
+            type: string
+            length: 45
+            fixed: false
+            nullable: true
+    lifecycleCallbacks: {  }

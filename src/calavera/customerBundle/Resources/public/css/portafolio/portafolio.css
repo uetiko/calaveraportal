@@ -1,0 +1,23 @@
+/* 
+    Document   : portafolio
+    Created on : Aug 31, 2013, 1:59:31 AM
+    Author     : silent
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#man-pic.man-pic {
+    background-image: url('/bundles/calaveracustomer/images/icons/logos/calavera_portafolio.png');
+    float: left;
+    width: 429px;
+    height: 1012px;
+    margin-top: -50px;
+    padding-top: 0px;
+}
+
+.portafolio-content {
+    float: left;
+    margin-top: 50px;
+    margin-left: 15px;
+    padding-left: 15px;
+}

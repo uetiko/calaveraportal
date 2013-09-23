@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Relationships" table="relationships">
+    <id name="id" type="string" column="id" length="36">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="relationshipName" type="string" column="relationship_name" length="150" nullable="true"/>
+    <field name="lhsModule" type="string" column="lhs_module" length="100" nullable="true"/>
+    <field name="lhsTable" type="string" column="lhs_table" length="64" nullable="true"/>
+    <field name="lhsKey" type="string" column="lhs_key" length="64" nullable="true"/>
+    <field name="rhsModule" type="string" column="rhs_module" length="100" nullable="true"/>
+    <field name="rhsTable" type="string" column="rhs_table" length="64" nullable="true"/>
+    <field name="rhsKey" type="string" column="rhs_key" length="64" nullable="true"/>
+    <field name="joinTable" type="string" column="join_table" length="64" nullable="true"/>
+    <field name="joinKeyLhs" type="string" column="join_key_lhs" length="64" nullable="true"/>
+    <field name="joinKeyRhs" type="string" column="join_key_rhs" length="64" nullable="true"/>
+    <field name="relationshipType" type="string" column="relationship_type" length="64" nullable="true"/>
+    <field name="relationshipRoleColumn" type="string" column="relationship_role_column" length="64" nullable="true"/>
+    <field name="relationshipRoleColumnValue" type="string" column="relationship_role_column_value" length="50" nullable="true"/>
+    <field name="reverse" type="boolean" column="reverse" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+  </entity>
+</doctrine-mapping>

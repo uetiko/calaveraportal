@@ -1,0 +1,24 @@
+{% extends  'calaveracustomerBundle::base.html.twig'%}
+{% block title %} Servicios {% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/calaveracustomer/css/servicios/general.css') }}" type="text/css" />
+{% endblock %}
+{% block header %}
+<div class="logo-calavera">
+</div>
+{% endblock %}
+{% block body %}
+<h2 class="title-service">Nuestros servicios</h2>
+<article class="service-describe">
+    <dl class="service-element">
+        <dt>
+        <img src="{{ asset('bundles/calaveracustomer/images/icons/logos/web_desing_mac.png') }}" />
+            <h2>Diseño web</h2>
+        </dt>
+        <dd>
+            <p>Diseño y desarrollo de páginas corporativas y autogestionables</p>
+            <a href="{{ url('_serviciosWeb') }}">Saber mas</a>
+        </dd>
+    </dl>
+</article>
+{% endblock %}

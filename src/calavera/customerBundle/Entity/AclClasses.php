@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="acl_classes")
  * @ORM\Entity
  */
-class AclClasses {
-
+class AclClasses
+{
     /**
      * @var integer
      *
@@ -28,14 +28,7 @@ class AclClasses {
      */
     private $classType;
 
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId() {
-        return $this->id;
-    }
+
 
     /**
      * Set classType
@@ -43,9 +36,10 @@ class AclClasses {
      * @param string $classType
      * @return AclClasses
      */
-    public function setClassType($classType) {
+    public function setClassType($classType)
+    {
         $this->classType = $classType;
-
+    
         return $this;
     }
 
@@ -54,8 +48,18 @@ class AclClasses {
      *
      * @return string 
      */
-    public function getClassType() {
+    public function getClassType()
+    {
         return $this->classType;
     }
 
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

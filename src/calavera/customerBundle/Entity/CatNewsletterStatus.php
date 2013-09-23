@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="cat_newsletter_status")
  * @ORM\Entity
  */
-class CatNewsletterStatus {
-
+class CatNewsletterStatus
+{
     /**
      * @var integer
      *
@@ -28,14 +28,7 @@ class CatNewsletterStatus {
      */
     private $status;
 
-    /**
-     * Get idNewsletterStatus
-     *
-     * @return integer 
-     */
-    public function getIdNewsletterStatus() {
-        return $this->idNewsletterStatus;
-    }
+
 
     /**
      * Set status
@@ -43,9 +36,10 @@ class CatNewsletterStatus {
      * @param string $status
      * @return CatNewsletterStatus
      */
-    public function setStatus($status) {
+    public function setStatus($status)
+    {
         $this->status = $status;
-
+    
         return $this;
     }
 
@@ -54,8 +48,18 @@ class CatNewsletterStatus {
      *
      * @return string 
      */
-    public function getStatus() {
+    public function getStatus()
+    {
         return $this->status;
     }
 
+    /**
+     * Get idNewsletterStatus
+     *
+     * @return integer 
+     */
+    public function getIdNewsletterStatus()
+    {
+        return $this->idNewsletterStatus;
+    }
 }

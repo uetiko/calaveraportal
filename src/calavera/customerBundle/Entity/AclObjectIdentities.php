@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="acl_object_identities")
  * @ORM\Entity
  */
-class AclObjectIdentities {
-
+class AclObjectIdentities
+{
     /**
      * @var integer
      *
@@ -70,18 +70,11 @@ class AclObjectIdentities {
     /**
      * Constructor
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->ancestor = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId() {
-        return $this->id;
-    }
+    
 
     /**
      * Set classId
@@ -89,9 +82,10 @@ class AclObjectIdentities {
      * @param integer $classId
      * @return AclObjectIdentities
      */
-    public function setClassId($classId) {
+    public function setClassId($classId)
+    {
         $this->classId = $classId;
-
+    
         return $this;
     }
 
@@ -100,7 +94,8 @@ class AclObjectIdentities {
      *
      * @return integer 
      */
-    public function getClassId() {
+    public function getClassId()
+    {
         return $this->classId;
     }
 
@@ -110,9 +105,10 @@ class AclObjectIdentities {
      * @param string $objectIdentifier
      * @return AclObjectIdentities
      */
-    public function setObjectIdentifier($objectIdentifier) {
+    public function setObjectIdentifier($objectIdentifier)
+    {
         $this->objectIdentifier = $objectIdentifier;
-
+    
         return $this;
     }
 
@@ -121,7 +117,8 @@ class AclObjectIdentities {
      *
      * @return string 
      */
-    public function getObjectIdentifier() {
+    public function getObjectIdentifier()
+    {
         return $this->objectIdentifier;
     }
 
@@ -131,9 +128,10 @@ class AclObjectIdentities {
      * @param boolean $entriesInheriting
      * @return AclObjectIdentities
      */
-    public function setEntriesInheriting($entriesInheriting) {
+    public function setEntriesInheriting($entriesInheriting)
+    {
         $this->entriesInheriting = $entriesInheriting;
-
+    
         return $this;
     }
 
@@ -142,38 +140,19 @@ class AclObjectIdentities {
      *
      * @return boolean 
      */
-    public function getEntriesInheriting() {
+    public function getEntriesInheriting()
+    {
         return $this->entriesInheriting;
     }
 
     /**
-     * Add ancestor
+     * Get id
      *
-     * @param \calavera\customerBundle\Entity\AclObjectIdentities $ancestor
-     * @return AclObjectIdentities
+     * @return integer 
      */
-    public function addAncestor(\calavera\customerBundle\Entity\AclObjectIdentities $ancestor) {
-        $this->ancestor[] = $ancestor;
-
-        return $this;
-    }
-
-    /**
-     * Remove ancestor
-     *
-     * @param \calavera\customerBundle\Entity\AclObjectIdentities $ancestor
-     */
-    public function removeAncestor(\calavera\customerBundle\Entity\AclObjectIdentities $ancestor) {
-        $this->ancestor->removeElement($ancestor);
-    }
-
-    /**
-     * Get ancestor
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getAncestor() {
-        return $this->ancestor;
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -182,9 +161,10 @@ class AclObjectIdentities {
      * @param \calavera\customerBundle\Entity\AclObjectIdentities $parentObjectentity
      * @return AclObjectIdentities
      */
-    public function setParentObjectentity(\calavera\customerBundle\Entity\AclObjectIdentities $parentObjectentity = null) {
+    public function setParentObjectentity(\calavera\customerBundle\Entity\AclObjectIdentities $parentObjectentity = null)
+    {
         $this->parentObjectentity = $parentObjectentity;
-
+    
         return $this;
     }
 
@@ -193,8 +173,41 @@ class AclObjectIdentities {
      *
      * @return \calavera\customerBundle\Entity\AclObjectIdentities 
      */
-    public function getParentObjectentity() {
+    public function getParentObjectentity()
+    {
         return $this->parentObjectentity;
     }
 
+    /**
+     * Add ancestor
+     *
+     * @param \calavera\customerBundle\Entity\AclObjectIdentities $ancestor
+     * @return AclObjectIdentities
+     */
+    public function addAncestor(\calavera\customerBundle\Entity\AclObjectIdentities $ancestor)
+    {
+        $this->ancestor[] = $ancestor;
+    
+        return $this;
+    }
+
+    /**
+     * Remove ancestor
+     *
+     * @param \calavera\customerBundle\Entity\AclObjectIdentities $ancestor
+     */
+    public function removeAncestor(\calavera\customerBundle\Entity\AclObjectIdentities $ancestor)
+    {
+        $this->ancestor->removeElement($ancestor);
+    }
+
+    /**
+     * Get ancestor
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAncestor()
+    {
+        return $this->ancestor;
+    }
 }

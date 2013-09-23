@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FieldsMetaData" table="fields_meta_data">
+    <id name="id" type="string" column="id" length="255">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="255" nullable="true"/>
+    <field name="vname" type="string" column="vname" length="255" nullable="true"/>
+    <field name="comments" type="string" column="comments" length="255" nullable="true"/>
+    <field name="help" type="string" column="help" length="255" nullable="true"/>
+    <field name="customModule" type="string" column="custom_module" length="255" nullable="true"/>
+    <field name="type" type="string" column="type" length="255" nullable="true"/>
+    <field name="len" type="integer" column="len" nullable="true"/>
+    <field name="required" type="boolean" column="required" nullable="true"/>
+    <field name="defaultValue" type="string" column="default_value" length="255" nullable="true"/>
+    <field name="dateModified" type="datetime" column="date_modified" nullable="true"/>
+    <field name="deleted" type="boolean" column="deleted" nullable="true"/>
+    <field name="audited" type="boolean" column="audited" nullable="true"/>
+    <field name="massupdate" type="boolean" column="massupdate" nullable="true"/>
+    <field name="duplicateMerge" type="smallint" column="duplicate_merge" nullable="true"/>
+    <field name="reportable" type="boolean" column="reportable" nullable="true"/>
+    <field name="importable" type="string" column="importable" length="255" nullable="true"/>
+    <field name="ext1" type="string" column="ext1" length="255" nullable="true"/>
+    <field name="ext2" type="string" column="ext2" length="255" nullable="true"/>
+    <field name="ext3" type="string" column="ext3" length="255" nullable="true"/>
+    <field name="ext4" type="text" column="ext4" nullable="true"/>
+  </entity>
+</doctrine-mapping>
